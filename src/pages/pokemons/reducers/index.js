@@ -8,8 +8,11 @@ const defaultState = {
 
 export const pokemonsReducer = handleActions(
     {
-        [actions.GET_POKEMONS]: (state) => {
-            return state;
+        [actions.GET_POKEMONS_ACTION]: (state, { payload }) => {
+            return {
+                ...state,
+                pokemons: [...payload],
+            };
         },
     },
     defaultState

@@ -8,6 +8,10 @@ import { Router } from "./routes/Router";
 import { MainLayout } from "./commonComponents/MainLayout";
 import { configureStore } from "./redux/configureStore";
 
+import index from "./redux/rootSaga";
+
+index();
+
 const store = configureStore();
 
 ReactDOM.render(

@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { ROUTE_NAMES } from "./routeNames";
 
 import { PokemonsPageContainer } from "../pages/pokemons/containers/PokemonsPageContainer";
+import { PokemonDetails } from "../pages/pokemons/components/PokemonDetails";
 
 export const Router = () => {
     return (
@@ -12,6 +13,10 @@ export const Router = () => {
                 path={ROUTE_NAMES.POKEMONS}
                 element={<PokemonsPageContainer />}
             />
+            <Route
+                path={ROUTE_NAMES.POKEMON_DETAILS}
+                element={<PokemonDetails />}
+            ></Route>
         </Routes>
     );
 };

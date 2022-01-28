@@ -1,15 +1,15 @@
-import { Link } from "react-router-dom";
-
+import { NavLink } from "react-router-dom";
 import { ROUTE_NAMES } from "../../routes/routeNames";
 
 export const Header = () => {
-    const links = Object.entries(ROUTE_NAMES).map(([title, pathTo], i) => {
-        return (
-            <Link key={i} to={pathTo} style={{ margin: 10 }}>
-                {title}
-            </Link>
-        );
-    });
-
-    return <div>{links}</div>;
+    return (
+        <div>
+            <NavLink to={ROUTE_NAMES.HOME} style={{ margin: 10 }}>
+                HOME
+            </NavLink>
+            <NavLink to={ROUTE_NAMES.POKEMONS} style={{ margin: 10 }}>
+                POKEMONS
+            </NavLink>
+        </div>
+    );
 };
