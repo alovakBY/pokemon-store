@@ -1,7 +1,9 @@
 import axios from "axios";
 
+const BASE_URL = "https://it-shatle-demo-api.herokuapp.com";
+
 const config = {
-    baseURL: " https://pokeapi.co/api/v2",
+  baseURL: BASE_URL,
 };
 
 export default axios.create(config);

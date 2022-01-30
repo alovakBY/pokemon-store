@@ -2,29 +2,32 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import * as actions from "../actions";
-import { getPokemons } from "../services";
+import { PokemonService } from "../../../services/pokemonService";
 
 import { PokemonsLayout } from "../components/PokemonsLayout";
-import { useFetching } from "../../../hooks/useFetching";
+import { pokemonPageSelector } from "../selectors";
 
 export const PokemonsPageContainer = () => {
-    const dispatch = useDispatch();
-    const pokemons = useSelector(({ pokemonsPage }) => pokemonsPage.pokemons);
-    const { response, loading, errors } = useFetching(() => getPokemons());
+  const token = useSelector((state) => state.loginPage.token);
+  const dispatch = useDispatch();
+  const { pokemons, isLoading, errors } = useSelector(pokemonPageSelector);
 
-    useEffect(() => {
-        if (response) {
-            dispatch(actions.GET_POKEMONS_ACTION(response.results));
-        }
-    }, [response]);
+  useEffect(() => {
+    console.log(token);
+    dispatch(actions.GET_POKEMONS_REQUEST(token));
+  }, []);
 
-    return (
-        <div>
-            {loading ? (
-                <div>Loading...</div>
-            ) : (
-                <PokemonsLayout pokemons={pokemons} />
-            )}
-        </div>
-    );
+  if (errors) {
+    console.log(errors);
+  }
+
+  return (
+    <div>
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <PokemonsLayout pokemons={pokemons} />
+      )}
+    </div>
+  );
 };

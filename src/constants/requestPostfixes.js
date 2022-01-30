@@ -1,0 +1,5 @@
+export const REQUEST_POSTFIXES = {
+  REQUEST: "_REQUEST",
+  SUCCES: "_SUCCESS",
+  FAIL: "_FAIL",
+};

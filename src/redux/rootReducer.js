@@ -1,7 +1,11 @@
 import { combineReducers } from "redux";
 
-import { pokemonsReducer } from "../pages/pokemons/reducers";
+import { pokemonDetailsPageReducer } from "../pages/pokemonDetails/reducers";
+import { pokemonsPageReducer } from "../pages/pokemons/reducers";
+import { loginPageReducer } from "../pages/login/reducers";
 
 export const rootReducer = combineReducers({
-    pokemonsPage: pokemonsReducer,
+  pokemonsPage: pokemonsPageReducer,
+  pokemonDetailsPage: pokemonDetailsPageReducer,
+  loginPage: loginPageReducer,
 });

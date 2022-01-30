@@ -3,25 +3,26 @@ import { handleActions } from "redux-actions";
 import * as actions from "../actions";
 
 const defaultState = {
-  pokemons: [],
+  pokemonDetails: {},
   isLoading: false,
   errors: null,
 };
 
-export const pokemonsPageReducer = handleActions(
+export const pokemonDetailsPageReducer = handleActions(
   {
-    [actions.GET_POKEMONS_REQUEST]: (state) => ({
+    [actions.GET_POKEMON_DETAILS_REQUEST]: (state) => ({
       ...state,
       isLoading: true,
     }),
-    [actions.GET_POKEMONS_SUCCESS]: (state, { payload }) => {
+    [actions.GET_POKEMON_DETAILS_SUCCESS]: (state, { payload }) => {
+      // console.log(payload.response);
       return {
         ...state,
         isLoading: false,
-        pokemons: [...payload.response.results],
+        pokemonDetails: payload.response,
       };
     },
-    [actions.GET_POKEMONS_FAIL]: (state, { payload }) => ({
+    [actions.GET_POKEMON_DETAILS_FAIL]: (state, { payload }) => ({
       ...state,
       isLoading: false,
       errors: payload,
