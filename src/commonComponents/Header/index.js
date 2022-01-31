@@ -1,18 +1,29 @@
 import { NavLink } from "react-router-dom";
+
+import { NAVIGATION } from "./config";
 import { ROUTE_NAMES } from "../../routes/routeNames";
+import { useSelector } from "react-redux";
+import { isAuthSelector } from "../../pages/login/selectors/isAuthSelector";
+import { useMemo } from "react";
 
 export const Header = () => {
-  return (
-    <div>
-      <NavLink to={ROUTE_NAMES.HOME} style={{ margin: 10 }}>
-        HOME
-      </NavLink>
-      <NavLink to={ROUTE_NAMES.SIGN_IN} style={{ margin: 10 }}>
-        SIGN IN
-      </NavLink>
-      <NavLink to={ROUTE_NAMES.POKEMONS} style={{ margin: 10 }}>
-        POKEMONS
-      </NavLink>
-    </div>
-  );
+    const { isAuth } = useSelector(isAuthSelector);
+
+    const navigationItems = useMemo(() => {
+        const targetNavigationItems = isAuth ? "PRIVATE" : "PUBLIC";
+
+        return NAVIGATION[targetNavigationItems];
+    }, [isAuth]);
+
+    return (
+        <div>
+            {navigationItems.map(({ title, path }) => {
+                return (
+                    <NavLink key={title} to={path}>
+                        {title}
+                    </NavLink>
+                );
+            })}
+        </div>
+    );
 };

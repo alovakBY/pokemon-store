@@ -4,9 +4,10 @@ import { LOCAL_STORAGE_KEYS } from "../../../constants/localStorageKeys";
 import * as actions from "../actions";
 
 const defaultState = {
-    response: null,
+    userData: {},
     isLoading: false,
     errors: null,
+    isAuth: false,
 };
 
 export const loginPageReducer = handleActions(
@@ -18,6 +19,7 @@ export const loginPageReducer = handleActions(
             };
         },
         [actions.SIGN_IN_SUCCESS]: (state, { payload }) => {
+            const { accessToken, ...userData } = payload.response;
             localStorage.setItem(
                 LOCAL_STORAGE_KEYS.ACCESS_TOKEN,
                 payload.response.accessToken
@@ -25,7 +27,8 @@ export const loginPageReducer = handleActions(
             return {
                 ...state,
                 isLoading: false,
-                response: payload.response,
+                isAuth: true,
+                userData,
             };
         },
         [actions.SIGN_IN_FAIL]: (state, payload) => {
