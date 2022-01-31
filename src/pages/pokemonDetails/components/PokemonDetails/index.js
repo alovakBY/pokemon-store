@@ -1,8 +1,9 @@
-export const PokemonDetails = ({ name, imgSrc }) => {
-  return (
-    <div>
-      <div>{name}</div>
-      <img src={imgSrc} />
-    </div>
-  );
+export const PokemonDetails = ({ pokemonInfo }) => {
+    return (
+        <div>
+            <div>{pokemonInfo.name}</div>
+            <img src={pokemonInfo.image} />
+            <div>Price: {pokemonInfo.price} y.e.</div>
+        </div>
+    );
 };

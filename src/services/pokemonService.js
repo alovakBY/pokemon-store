@@ -1,19 +1,15 @@
 import api from "../api/config";
 
 class PokemonService {
-  static instance = new PokemonService();
+    static instance = new PokemonService();
 
-  getPokemons(token) {
-    const auth = {
-      Authorization: `Bearer ${token}`,
-    };
-    console.log(auth);
-    return api.get("/products", auth);
-  }
+    getPokemons() {
+        return api.get("/products");
+    }
 
-  getPokemonDetails(pokemon) {
-    return api.get(`/pokemon/${pokemon}`);
-  }
+    getPokemonDetails(id) {
+        return api.get(`/products/${id}`);
+    }
 }
 
 export default PokemonService.instance;

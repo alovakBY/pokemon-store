@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 
-export const Pokemons = ({ name }) => {
+export const Pokemons = ({ name, id }) => {
     return (
         <div>
-            <NavLink to={name}>{name}</NavLink>
+            <NavLink to={`${id}`}>{name}</NavLink>
         </div>
     );
 };

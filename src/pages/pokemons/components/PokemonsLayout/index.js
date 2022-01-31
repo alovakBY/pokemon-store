@@ -1,7 +1,7 @@
 import { Pokemons } from "../Pokemons";
 
 export const PokemonsLayout = ({ pokemons }) => {
-  return pokemons.map(({ name, url }) => {
-    return <Pokemons key={url} name={name} />;
-  });
+    return pokemons.map(({ name, id }) => {
+        return <Pokemons key={id} name={name} id={id} />;
+    });
 };
