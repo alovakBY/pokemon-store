@@ -8,22 +8,26 @@ import * as actions from "../actions";
 import { pokemonDetailsPageSelector } from "../selectors";
 
 export const PokemonDetailsContainer = () => {
-    const { id } = useParams();
-    const dispatch = useDispatch();
-    const { isLoading, errors, pokemonInfo } = useSelector(
-        pokemonDetailsPageSelector
-    );
-    useEffect(() => {
-        dispatch(actions.GET_POKEMON_DETAILS_REQUEST(id));
-    }, []);
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const { isLoading, errors, pokemonInfo } = useSelector(
+    pokemonDetailsPageSelector
+  );
+  useEffect(() => {
+    dispatch(actions.GET_POKEMON_DETAILS_REQUEST(id));
+  }, []);
 
-    return (
-        <div>
-            {isLoading ? (
-                <div>Loading...</div>
-            ) : (
-                <PokemonDetails pokemonInfo={pokemonInfo} />
-            )}
-        </div>
-    );
+  if (errors) {
+    console.log(errors);
+  }
+
+  return (
+    <div>
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <PokemonDetails pokemonInfo={pokemonInfo} />
+      )}
+    </div>
+  );
 };

@@ -8,24 +8,24 @@ import { PokemonsLayout } from "../components/PokemonsLayout";
 import { pokemonPageSelector } from "../selectors";
 
 export const PokemonsPageContainer = () => {
-    const dispatch = useDispatch();
-    const { pokemons, isLoading, errors } = useSelector(pokemonPageSelector);
+  const dispatch = useDispatch();
+  const { pokemons, isLoading, errors } = useSelector(pokemonPageSelector);
 
-    useEffect(() => {
-        dispatch(actions.GET_POKEMONS_REQUEST());
-    }, []);
+  useEffect(() => {
+    dispatch(actions.GET_POKEMONS_REQUEST());
+  }, []);
 
-    if (errors) {
-        console.log(errors);
-    }
+  if (errors) {
+    console.log(errors);
+  }
 
-    return (
-        <div>
-            {isLoading ? (
-                <div>Loading...</div>
-            ) : (
-                <PokemonsLayout pokemons={pokemons} />
-            )}
-        </div>
-    );
+  return (
+    <div>
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <PokemonsLayout pokemons={pokemons} />
+      )}
+    </div>
+  );
 };
