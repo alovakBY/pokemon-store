@@ -1,21 +1,39 @@
 import api from "../api/config";
 
 class AuthService {
-  static instance = new AuthService();
+    static instance = new AuthService();
 
-  signIn({ email, password }) {
-    const authData = {
-      email,
-      password,
-    };
-    return api.post("/auth/signIn", authData);
-  }
+    signIn({ email, password }) {
+        const signInData = {
+            email,
+            password,
+        };
+        return api.post("/auth/signIn", signInData);
+    }
 
-  signOut() {
-    localStorage.clear();
+    signUp(signUpData) {
+        // const signUpData = {
+        //     email,
+        //     firstName,
+        //     lastName,
+        //     address: {
+        //         country,
+        //         city,
+        //         addressLine1,
+        //         addressLine2,
+        //     },
+        //     gender,
+        //     password,
+        //     phone,
+        // };
+        return api.post("/auth/signup", signUpData);
+    }
 
-    window.location.reload();
-  }
+    signOut() {
+        localStorage.clear();
+
+        window.location.reload();
+    }
 }
 
 export default AuthService.instance;

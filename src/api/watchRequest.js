@@ -5,21 +5,25 @@ import { isApiCallAction } from "../utils/isApiCallAction";
 import { apiCallsMapping } from "./apiCallsMapping";
 
 function* watchRequestWorker(action) {
-  try {
-    const foundApiCall = apiCallsMapping(action);
+    try {
+        const foundApiCall = apiCallsMapping(action);
 
-    const response = yield call(foundApiCall, action.payload);
+        const response = yield call(foundApiCall, action.payload);
 
-    yield put(
-      createActionWithPostfix(action, REQUEST_POSTFIXES.SUCCES, response.data)
-    );
-  } catch (error) {
-    yield put(
-      createActionWithPostfix(action, REQUEST_POSTFIXES.FAIL, error.message)
-    );
-  }
+        yield put(
+            createActionWithPostfix(
+                action,
+                REQUEST_POSTFIXES.SUCCES,
+                response.data
+            )
+        );
+    } catch (error) {
+        yield put(
+            createActionWithPostfix(action, REQUEST_POSTFIXES.FAIL, error)
+        );
+    }
 }
 
 export function* watchRequest() {
-  yield takeEvery(isApiCallAction, watchRequestWorker);
+    yield takeEvery(isApiCallAction, watchRequestWorker);
 }

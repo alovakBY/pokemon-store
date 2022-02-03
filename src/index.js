@@ -9,6 +9,8 @@ import { Router } from "./routes/Router";
 import { MainLayout } from "./commonComponents/MainLayout";
 import { configureStore } from "./redux/configureStore";
 
+import "./index.css";
+
 const store = configureStore();
 const persistor = persistStore(store);
 

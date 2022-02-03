@@ -2,17 +2,22 @@ import { Routes, Route } from "react-router-dom";
 
 import { PokemonsPageContainer } from "../pages/pokemons/containers/PokemonsPageContainer";
 import { PokemonDetailsContainer } from "../pages/pokemonDetails/containers/PokemonDetailsContainer";
-import { LoginPageContainer } from "../pages/login/containers/LoginPageContainer";
+import { SignInPageContainer } from "../pages/signIn/containers/SignInPageContainer";
 
 import { ROUTE_NAMES } from "./routeNames";
 import { PrivateRoute } from "./privateRoute";
+import { SignUpPageContainer } from "../pages/signUp/containers/SignUpPageContainer";
 
 export const Router = () => {
     return (
         <Routes>
             <Route
                 path={ROUTE_NAMES.SIGN_IN}
-                element={<LoginPageContainer />}
+                element={<SignInPageContainer />}
+            />
+            <Route
+                path={ROUTE_NAMES.SIGN_UP}
+                element={<SignUpPageContainer />}
             />
             <Route element={<PrivateRoute />}>
                 <Route

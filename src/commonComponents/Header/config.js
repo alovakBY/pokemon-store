@@ -9,7 +9,7 @@ export const NAVIGATION = {
     ],
     PUBLIC: [
         {
-            title: "LOGIN",
+            title: "SIGN_IN",
             path: ROUTE_NAMES.SIGN_IN,
         },
     ],

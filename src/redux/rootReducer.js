@@ -5,9 +5,9 @@ import storage from "redux-persist/lib/storage";
 
 import { pokemonDetailsPageReducer } from "../pages/pokemonDetails/reducers";
 import { pokemonsPageReducer } from "../pages/pokemons/reducers";
-import { loginPageReducer } from "../pages/login/reducers";
+import { signInPageReducer } from "../pages/signIn/reducers";
 
-const authBlackListedFields = createBlacklistFilter("loginPage", [
+const authBlackListedFields = createBlacklistFilter("signInPage", [
     "isLoading",
     "errors",
     "userData",
@@ -16,14 +16,14 @@ const authBlackListedFields = createBlacklistFilter("loginPage", [
 const persistConfig = {
     key: "root",
     storage,
-    whitelist: ["loginPage"],
+    whitelist: ["signInPage"],
     transforms: [authBlackListedFields],
 };
 
 const rootReducer = combineReducers({
     pokemonsPage: pokemonsPageReducer,
     pokemonDetailsPage: pokemonDetailsPageReducer,
-    loginPage: loginPageReducer,
+    signInPage: signInPageReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

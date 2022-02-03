@@ -10,7 +10,7 @@ const defaultState = {
     isAuth: false,
 };
 
-export const loginPageReducer = handleActions(
+export const signInPageReducer = handleActions(
     {
         [actions.SIGN_IN_REQUEST]: (state) => {
             return {
@@ -31,11 +31,11 @@ export const loginPageReducer = handleActions(
                 userData,
             };
         },
-        [actions.SIGN_IN_FAIL]: (state, payload) => {
+        [actions.SIGN_IN_FAIL]: (state, { payload }) => {
             return {
                 ...state,
                 isLoading: false,
-                errors: payload,
+                errors: payload.response.message,
             };
         },
     },
