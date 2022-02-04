@@ -1,29 +1,26 @@
 import { Formik } from "formik";
 import * as yup from "yup";
 import { TextField } from "@mui/material";
-import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { makeStyles } from "@mui/styles";
 
-import { Spinner } from "../../../../commonComponents/Spinner";
+// import classes from "./index.module.css";
 
-import { isAuthSelector } from "../../selectors/isAuthSelector";
-import { ROUTE_NAMES } from "../../../../routes/routeNames";
+const useStyles = makeStyles((theme) => ({
+    formLabel: {
+        color: "green",
+    },
+}));
 
 export const SignIn = ({ handleSignIn }) => {
-    const { isLoading, errors } = useSelector(isAuthSelector);
     const validationsSchema = yup.object().shape({
         email: yup.string().email("Enter correct email").required("required"),
         password: yup.string().required("required"),
     });
 
-    return isLoading ? (
-        <Spinner />
-    ) : (
-        <div>
-            <div>
-                Don't have an account?{" "}
-                <NavLink to={ROUTE_NAMES.SIGN_UP}>Sign UP</NavLink>
-            </div>
+    const classes = useStyles();
+
+    return (
+        <>
             <Formik
                 initialValues={{
                     email: "",
@@ -48,6 +45,7 @@ export const SignIn = ({ handleSignIn }) => {
                     <form>
                         <div>
                             <TextField
+                                // className={classes.formLabel}
                                 type="text"
                                 name="email"
                                 label="email*"
@@ -55,9 +53,10 @@ export const SignIn = ({ handleSignIn }) => {
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.email}
+                                color="dark"
                             />
                             {touched.email && errors.email && (
-                                <p style={{ color: "red" }}>{errors.email}</p>
+                                <p>{errors.email}</p>
                             )}
                         </div>
                         <div>
@@ -67,14 +66,13 @@ export const SignIn = ({ handleSignIn }) => {
                                 name="password"
                                 label="password*"
                                 variant="outlined"
+                                color="dark"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.password}
                             />
                             {touched.password && errors.password && (
-                                <p style={{ color: "red" }}>
-                                    {errors.password}
-                                </p>
+                                <p>{errors.password}</p>
                             )}
                         </div>
                         <button
@@ -87,7 +85,6 @@ export const SignIn = ({ handleSignIn }) => {
                     </form>
                 )}
             </Formik>
-            {errors && <div style={{ color: "red" }}>{errors}</div>}
-        </div>
+        </>
     );
 };

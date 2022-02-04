@@ -1,9 +1,11 @@
-import { CircularProgress, Box } from "@mui/material";
+import { CircularProgress } from "@mui/material";
+
+import classes from "./Spinner.module.css";
 
 export const Spinner = () => {
     return (
-        <div>
-            <CircularProgress />
+        <div className={classes.container}>
+            <CircularProgress className={classes.spinner} />
         </div>
     );
 };

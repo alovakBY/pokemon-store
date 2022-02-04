@@ -2,15 +2,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { SignIn } from "../components/SignIn";
+import { SignInLayout } from "../components/SignInLayout";
+import { Spinner } from "../../../commonComponents/Spinner";
 
 import * as actions from "../actions";
 import { isAuthSelector } from "../selectors/isAuthSelector";
 import { ROUTE_NAMES } from "../../../routes/routeNames";
 
 export const SignInPageContainer = () => {
-    const { isAuth } = useSelector(isAuthSelector);
-    const { errors } = useSelector((state) => state.signInPage);
+    const { isAuth, isLoading, errors } = useSelector(isAuthSelector);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleSignIn = (email, password) => {
@@ -21,15 +21,16 @@ export const SignInPageContainer = () => {
             })
         );
     };
-    // console.log(errors);
     useEffect(() => {
         if (isAuth) {
             navigate(ROUTE_NAMES.POKEMONS);
         }
     }, [isAuth]);
     return (
-        <>
-            <SignIn handleSignIn={handleSignIn} />
-        </>
+        <SignInLayout
+            isLoading={isLoading}
+            errors={errors}
+            handleSignIn={handleSignIn}
+        />
     );
 };
