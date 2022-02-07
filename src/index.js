@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 import { ThemeProvider } from "@mui/material/styles";
+import { Container } from "@mui/material";
 
 import { Router } from "./routes/Router";
 import { MainLayout } from "./commonComponents/MainLayout";
@@ -23,9 +24,11 @@ ReactDOM.render(
             <Provider store={store}>
                 <ThemeProvider theme={theme}>
                     <PersistGate loading={null} persistor={persistor}>
-                        <MainLayout>
-                            <Router />
-                        </MainLayout>
+                        <Container>
+                            <MainLayout>
+                                <Router />
+                            </MainLayout>
+                        </Container>
                     </PersistGate>
                 </ThemeProvider>
             </Provider>

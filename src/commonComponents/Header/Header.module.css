@@ -1,0 +1,50 @@
+.header {
+	width: 100%;
+	padding: 10px 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	margin: 0 auto;
+	box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+	background-color: white;
+}
+
+.wrapper {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo{
+	width: 70px;
+}
+
+.logo > img {
+	width: 100%;
+}
+
+.link {
+	font-weight: 600;
+	font-size: 24px;
+	transition: border-color .3s, color .3s;
+}
+
+.link:hover {
+	color: #e43332;
+}
+
+.link + .link {
+	margin-left: 15px;
+}
+
+.active {
+	border-bottom: 2px solid ;
+	border-color: #212121;
+}
+
+.active:hover {
+	border-color: #e43332;
+}
+

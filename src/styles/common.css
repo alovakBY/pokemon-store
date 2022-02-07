@@ -31,9 +31,11 @@ aside {
 
 html,
 body {
+	height: 1000px;
 	width: 100%;
 	font-size: 16px;
 	font-family: "OpenSans", sans-serif;
+	color:#212121;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 1.2;
@@ -64,6 +66,7 @@ button::-moz-focus-inner {
 a,
 a:visited {
 	text-decoration: none;
+	color:#212121;
 }
 
 a:hover {

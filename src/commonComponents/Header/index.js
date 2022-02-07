@@ -1,10 +1,15 @@
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useMemo } from "react";
+import { Container } from "@mui/material";
 
 import { NAVIGATION } from "./config";
-import { useSelector } from "react-redux";
 import { isAuthSelector } from "../../pages/signIn/selectors/isAuthSelector";
-import { useMemo } from "react";
 import authService from "../../services/authService";
+
+import logo from "../../static/images/logo.svg";
+
+import classes from "./Header.module.css";
 
 export const Header = () => {
     const { isAuth } = useSelector(isAuthSelector);
@@ -16,18 +21,36 @@ export const Header = () => {
     }, [isAuth]);
 
     return (
-        <div style={{ marginBottom: 10 }}>
-            {navigationItems.map(({ title, path }) => {
-                return (
-                    <NavLink key={title} to={path}>
-                        {title}
-                    </NavLink>
-                );
-            })}
-
-            {isAuth && (
-                <button onClick={() => authService.signOut()}>Logout</button>
-            )}
+        <div className={classes.header}>
+            <Container>
+                <div className={classes.wrapper}>
+                    <div className={classes.logo}>
+                        <img src={logo} alt="logo" />
+                    </div>
+                    <div className={classes.navigation}>
+                        {navigationItems.map(({ title, path }) => {
+                            return (
+                                <NavLink
+                                    key={title}
+                                    to={path}
+                                    className={({ isActive }) => {
+                                        return `${classes.link} ${
+                                            isActive && classes.active
+                                        }`;
+                                    }}
+                                >
+                                    {title}
+                                </NavLink>
+                            );
+                        })}
+                        {isAuth && (
+                            <button onClick={() => authService.signOut()}>
+                                Logout
+                            </button>
+                        )}
+                    </div>
+                </div>
+            </Container>
         </div>
     );
 };

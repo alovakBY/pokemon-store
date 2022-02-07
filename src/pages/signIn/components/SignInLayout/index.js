@@ -1,21 +1,37 @@
-import { NavLink } from "react-router-dom";
+import { Formik } from "formik";
 
 import { SignIn } from "../SignIn";
 import { Spinner } from "../../../../commonComponents/Spinner";
 
-import { ROUTE_NAMES } from "../../../../routes/routeNames";
+import classes from "./SignInLayout.module.css";
 
-export const SignInLayout = ({ isLoading, errors, handleSignIn }) => {
+export const SignInLayout = ({
+    isLoading,
+    errors,
+    handleSignIn,
+    validationsSchema,
+}) => {
     return isLoading ? (
         <Spinner />
     ) : (
-        <>
-            <div>
-                Don't have an account?{" "}
-                <NavLink to={ROUTE_NAMES.SIGN_UP}>Sign UP</NavLink>
+        <div className={classes.signIn}>
+            <div className={classes.title}>Sign in</div>
+            <div className={classes.form}>
+                <Formik
+                    initialValues={{
+                        email: "",
+                        password: "",
+                    }}
+                    validateOnBlur
+                    validationSchema={validationsSchema}
+                    onSubmit={({ email, password }) =>
+                        handleSignIn(email, password)
+                    }
+                >
+                    {(formik) => <SignIn formik={formik} />}
+                </Formik>
+                {errors && <div className={classes.errors}>{errors}</div>}
             </div>
-            <SignIn handleSignIn={handleSignIn} />
-            {errors && <div>{errors}</div>}
-        </>
+        </div>
     );
 };

@@ -1,0 +1,27 @@
+.signIn {
+	margin: 50px auto 0;
+	max-width: 600px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.title {
+	font-size: 24px;
+	font-weight: 700;
+	letter-spacing: 0;
+	line-height:1.625;
+   margin-bottom: 30px;
+}
+
+.form {
+	width: 100%;
+	border: 1px solid #e6e6e6;
+   border-radius: 12px;
+   padding: 20px;
+}
+
+.errors {
+	color: red;
+}

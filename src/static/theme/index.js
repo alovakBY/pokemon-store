@@ -12,4 +12,13 @@ export const theme = createTheme({
     typography: {
         fontFamily: "OpenSans",
     },
+    components: {
+        MuiContainer: {
+            styleOverrides: {
+                root: {
+                    maxWidth: "1440px !important",
+                },
+            },
+        },
+    },
 });

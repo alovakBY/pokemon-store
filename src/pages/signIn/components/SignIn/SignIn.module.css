@@ -1,0 +1,41 @@
+.label {
+    margin: 10px 0 5px;
+}
+
+.input {
+    margin-bottom: 5px !important;
+    width: 100%;
+}
+
+.error {
+    color: red;
+    padding: 4px 0;
+    margin-bottom: 15px;
+}
+
+.button {
+    background: #212121;
+    border: 1px solid;
+    border-color: #212121;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 400;
+    height: 48px;
+    line-height: 1;
+    padding: 15px 28px;
+    margin: 15px 0;
+    transition: .3s;
+    width: 100%;
+}
+
+.button:hover {
+    background:#3a3a3a;
+    border-color: #3a3a3a;
+}
+
+.button:disabled  {
+    opacity: .6;
+    /* cursor: auto; */
+    pointer-events:none;
+}

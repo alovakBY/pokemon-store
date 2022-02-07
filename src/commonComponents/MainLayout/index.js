@@ -4,9 +4,9 @@ import classes from "./mainLayout.module.css";
 
 export const MainLayout = ({ children }) => {
     return (
-        <div className={classes.container}>
+        <div className={classes.main}>
             <Header />
-            <div>{children}</div>
+            <>{children}</>
         </div>
     );
 };
