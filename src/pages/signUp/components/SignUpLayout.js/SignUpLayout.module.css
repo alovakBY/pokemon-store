@@ -1,4 +1,4 @@
-.signIn {
+.signUp {
   margin: 30px auto;
   max-width: 600px;
   display: flex;
@@ -20,6 +20,14 @@
   border: 1px solid #e6e6e6;
   border-radius: 12px;
   padding: 20px;
+}
+
+.success {
+  text-align: center;
+  color: green;
+  font-weight: 600;
+  font-size: 24px;
+  margin-top: 40px;
 }
 
 .errors {
