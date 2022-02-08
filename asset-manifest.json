@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/react-redux-saga/static/css/main.1d152992.css",
-    "main.js": "/react-redux-saga/static/js/main.3d468160.js",
+    "main.css": "/react-redux-saga/static/css/main.3766bb86.css",
+    "main.js": "/react-redux-saga/static/js/main.cd47d867.js",
     "static/media/OpenSans-Regular.ttf": "/react-redux-saga/static/media/OpenSans-Regular.d7d7b8359eeb9cddfba6.ttf",
     "static/media/OpenSans-Bold.ttf": "/react-redux-saga/static/media/OpenSans-Bold.6e27168fc8a5a200a026.ttf",
     "static/media/OpenSans-SemiBold.ttf": "/react-redux-saga/static/media/OpenSans-SemiBold.d7261533b9a545ddc769.ttf",
     "static/media/logo.svg": "/react-redux-saga/static/media/logo.d333de68ddc3943108f7b82e7d75d918.svg",
     "static/media/poke-spinner.svg": "/react-redux-saga/static/media/poke-spinner.85ec711da00b91c81767c5f3c0a92bcc.svg",
     "index.html": "/react-redux-saga/index.html",
-    "main.1d152992.css.map": "/react-redux-saga/static/css/main.1d152992.css.map",
-    "main.3d468160.js.map": "/react-redux-saga/static/js/main.3d468160.js.map"
+    "main.3766bb86.css.map": "/react-redux-saga/static/css/main.3766bb86.css.map",
+    "main.cd47d867.js.map": "/react-redux-saga/static/js/main.cd47d867.js.map"
   },
   "entrypoints": [
-    "static/css/main.1d152992.css",
-    "static/js/main.3d468160.js"
+    "static/css/main.3766bb86.css",
+    "static/js/main.cd47d867.js"
   ]
 }
