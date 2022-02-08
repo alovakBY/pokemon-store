@@ -12,5 +12,14 @@
 }
 
 .spinner {
-	color: #212121 !important;
+	transform-origin: center;
+	animation: rotate 1.5s infinite linear;
+	filter: hue-rotate(20deg) contrast(200%)
 }
+
+@keyframes rotate {
+	from {transform: rotate(0deg)}
+	50% {transform: rotate(180deg)}
+	to {transform: rotate(360deg)}
+	}
+

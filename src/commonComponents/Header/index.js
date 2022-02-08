@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useMemo } from "react";
 import { Container } from "@mui/material";
+import { Logout } from "@mui/icons-material";
 
 import { NAVIGATION } from "./config";
 import { isAuthSelector } from "../../pages/signIn/selectors/isAuthSelector";
@@ -44,9 +45,13 @@ export const Header = () => {
                             );
                         })}
                         {isAuth && (
-                            <button onClick={() => authService.signOut()}>
-                                Logout
-                            </button>
+                            <div
+                                className={`${classes.link} ${classes.logout}`}
+                                onClick={() => authService.signOut()}
+                            >
+                                <Logout />
+                                <span>Logout</span>
+                            </div>
                         )}
                     </div>
                 </div>
