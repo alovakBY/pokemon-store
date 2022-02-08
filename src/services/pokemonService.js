@@ -3,8 +3,13 @@ import api from "../api/config";
 class PokemonService {
     static instance = new PokemonService();
 
-    getPokemons() {
-        return api.get("/products");
+    getPokemons(page) {
+        return api.get("/products", {
+            params: {
+                page,
+                limit: 25,
+            },
+        });
     }
 
     getPokemonDetails(id) {
