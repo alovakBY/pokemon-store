@@ -9,6 +9,7 @@ import { isAuthSelector } from "../../pages/signIn/selectors/isAuthSelector";
 import authService from "../../services/authService";
 
 import logo from "../../static/images/logo.svg";
+import cart from "../../static/images/cart.svg";
 
 import classes from "./Header.module.css";
 
@@ -29,7 +30,7 @@ export const Header = () => {
                         <img src={logo} alt="logo" />
                     </div>
                     <div className={classes.navigation}>
-                        {navigationItems.map(({ title, path }) => {
+                        {navigationItems.map(({ title, path, img }) => {
                             return (
                                 <NavLink
                                     key={title}
@@ -45,13 +46,15 @@ export const Header = () => {
                             );
                         })}
                         {isAuth && (
-                            <div
-                                className={`${classes.link} ${classes.logout}`}
-                                onClick={() => authService.signOut()}
-                            >
-                                <Logout />
-                                <span>Logout</span>
-                            </div>
+                            <>
+                                <div
+                                    className={`${classes.link} ${classes.logout}`}
+                                    onClick={() => authService.signOut()}
+                                >
+                                    <Logout />
+                                    <span>Logout</span>
+                                </div>
+                            </>
                         )}
                     </div>
                 </div>

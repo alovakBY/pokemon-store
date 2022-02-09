@@ -6,7 +6,9 @@ import { apiCallsMapping } from "./apiCallsMapping";
 
 function* watchRequestWorker(action) {
     try {
-        const foundApiCall = apiCallsMapping(action);
+        const foundApiCall = apiCallsMapping(action.type);
+
+        // console.log(action.payload);
 
         const response = yield call(foundApiCall, action.payload);
 

@@ -12,20 +12,6 @@ class AuthService {
     }
 
     signUp(signUpData) {
-        // const signUpData = {
-        //     email,
-        //     firstName,
-        //     lastName,
-        //     address: {
-        //         country,
-        //         city,
-        //         addressLine1,
-        //         addressLine2,
-        //     },
-        //     gender,
-        //     password,
-        //     phone,
-        // };
         return api.post("/auth/signup", signUpData);
     }
 

@@ -7,11 +7,11 @@ import { pokemonDetailsPageReducer } from "../pages/pokemonDetails/reducers";
 import { pokemonsPageReducer } from "../pages/pokemons/reducers";
 import { signInPageReducer } from "../pages/signIn/reducers";
 import { signUpPageReducer } from "../pages/signUp/reducers";
+import { cartReducer } from "../pages/cart/reducers";
 
 const authBlackListedFields = createBlacklistFilter("signInPage", [
     "isLoading",
     "errors",
-    "userData",
 ]);
 
 const persistConfig = {
@@ -26,6 +26,7 @@ const rootReducer = combineReducers({
     pokemonDetailsPage: pokemonDetailsPageReducer,
     signInPage: signInPageReducer,
     signUpPage: signUpPageReducer,
+    cart: cartReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

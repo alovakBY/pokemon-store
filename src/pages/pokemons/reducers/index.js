@@ -13,6 +13,7 @@ export const pokemonsPageReducer = handleActions(
         [actions.GET_POKEMONS_REQUEST]: (state) => ({
             ...state,
             isLoading: true,
+            errors: null,
         }),
         [actions.GET_POKEMONS_SUCCESS]: (state, { payload }) => {
             return {
@@ -24,7 +25,7 @@ export const pokemonsPageReducer = handleActions(
         [actions.GET_POKEMONS_FAIL]: (state, { payload }) => ({
             ...state,
             isLoading: false,
-            errors: payload,
+            errors: payload.response.message,
         }),
     },
     defaultState

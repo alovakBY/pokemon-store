@@ -4,4 +4,5 @@ export const ROUTE_NAMES = {
     SIGN_UP: "/sign-up",
     POKEMONS: "/pokemons",
     POKEMON_DETAILS: "/pokemons/:id",
+    CART: "/cart",
 };

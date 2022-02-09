@@ -61,10 +61,16 @@ export const theme = createTheme({
                         color: "white",
                         backgroundColor: "#212121",
                     },
-                    "&.Mui-selected:hover": {
+                    "&:hover.Mui-selected": {
                         backgroundColor: "rgba(33,33,33, 0.5)",
                     },
-                    "&:hover": {
+                },
+            },
+        },
+        MuiButtonBase: {
+            styleOverrides: {
+                root: {
+                    "&.MuiPaginationItem-root:hover": {
                         backgroundColor: "#e43332",
                         color: "white",
                     },

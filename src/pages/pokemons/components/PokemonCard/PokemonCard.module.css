@@ -47,13 +47,14 @@
   padding: 30px 0px 0;
   margin-bottom: 10px;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .price {
   width: 100%;
   display: flex;
   align-items: center;
+  font-weight: 600;
 }
 
 .price > img {

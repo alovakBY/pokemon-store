@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { PokemonsPageContainer } from "../pages/pokemons/containers/PokemonsPageContainer";
 import { PokemonDetailsContainer } from "../pages/pokemonDetails/containers/PokemonDetailsContainer";
 import { SignInPageContainer } from "../pages/signIn/containers/SignInPageContainer";
+import { CartContainer } from "../pages/cart/containers/CartContainer";
 
 import { ROUTE_NAMES } from "./routeNames";
 import { PrivateRoute } from "./privateRoute";
@@ -28,6 +29,7 @@ export const Router = () => {
                     path={ROUTE_NAMES.POKEMON_DETAILS}
                     element={<PokemonDetailsContainer />}
                 />
+                <Route path={ROUTE_NAMES.CART} element={<CartContainer />} />
             </Route>
         </Routes>
     );
