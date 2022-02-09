@@ -9,26 +9,26 @@ import { pokemonDetailsPageSelector } from "../selectors";
 import { Spinner } from "../../../commonComponents/Spinner";
 
 export const PokemonDetailsContainer = () => {
-    const { id } = useParams();
-    const dispatch = useDispatch();
-    const { isLoading, errors, pokemonInfo } = useSelector(
-        pokemonDetailsPageSelector
-    );
-    useEffect(() => {
-        dispatch(actions.GET_POKEMON_DETAILS_REQUEST(id));
-    }, []);
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const { isLoading, errors, pokemonInfo } = useSelector(
+    pokemonDetailsPageSelector
+  );
+  useEffect(() => {
+    dispatch(actions.GET_POKEMON_DETAILS_REQUEST(id));
+  }, []);
 
-    if (errors) {
-        console.log(errors);
-    }
+  if (errors) {
+    console.log(errors);
+  }
 
-    return (
-        <div>
-            {isLoading ? (
-                <Spinner />
-            ) : (
-                <PokemonDetails pokemonInfo={pokemonInfo} />
-            )}
-        </div>
-    );
+  return (
+    <div>
+      {isLoading ? (
+        <Spinner screen={true} />
+      ) : (
+        <PokemonDetails pokemonInfo={pokemonInfo} />
+      )}
+    </div>
+  );
 };

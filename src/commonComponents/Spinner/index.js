@@ -5,10 +5,10 @@ import spinner from "../../static/images/poke-spinner.svg";
 
 import classes from "./Spinner.module.css";
 
-export const Spinner = () => {
-    return (
-        <div className={classes.container}>
-            <img className={classes.spinner} src={spinner} />
-        </div>
-    );
+export const Spinner = ({ screen }) => {
+  return (
+    <div className={screen ? classes.screen : classes.window}>
+      <img className={classes.spinner} src={spinner} />
+    </div>
+  );
 };

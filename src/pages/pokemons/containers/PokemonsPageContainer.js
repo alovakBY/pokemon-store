@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { usePagination } from "../../../hooks";
@@ -9,30 +9,35 @@ import * as actions from "../actions";
 
 import { PokemonsLayout } from "../components/PokemonsLayout";
 import { pokemonPageSelector } from "../selectors";
+import { cartSelector } from "../../cart/selectors";
 
 export const PokemonsPageContainer = () => {
-    const dispatch = useDispatch();
-    const { pokemons, isLoading, errors } = useSelector(pokemonPageSelector);
-    const [page, handlePageChange] = usePagination("pokemonsCurrentPage");
-    const { setCartItem } = useCart();
+  const dispatch = useDispatch();
+  const { pokemons, isLoading, errors } = useSelector(pokemonPageSelector);
+  const [page, handlePageChange] = usePagination("pokemonsCurrentPage");
+  const { loadingCart, setCartItem } = useCart();
+  const [idClickItem, setIDClickItem] = useState(0);
 
-    useEffect(() => {
-        dispatch(actions.GET_POKEMONS_REQUEST(page));
-    }, [page]);
+  useEffect(() => {
+    dispatch(actions.GET_POKEMONS_REQUEST(page));
+  }, [page]);
 
-    // if (errors) {
-    //     console.log(errors);
-    // }
+  const handleSetItemCart = ({ id, name, image, price }) => {
+    setCartItem({ id, name, image, price });
+    setIDClickItem((state) => (state = id));
+  };
 
-    return (
-        <>
-            <PokemonsLayout
-                pokemons={pokemons}
-                handlePageChange={handlePageChange}
-                page={page}
-                isLoading={isLoading}
-                setCartItem={setCartItem}
-            />
-        </>
-    );
+  return (
+    <>
+      <PokemonsLayout
+        pokemons={pokemons}
+        handlePageChange={handlePageChange}
+        page={page}
+        isLoading={isLoading}
+        loadingCart={loadingCart}
+        idClickItem={idClickItem}
+        handleSetItemCart={handleSetItemCart}
+      />
+    </>
+  );
 };
