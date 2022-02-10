@@ -6,10 +6,6 @@ export const NAVIGATION = {
             title: "Store",
             path: ROUTE_NAMES.POKEMONS,
         },
-        {
-            title: "Cart",
-            path: ROUTE_NAMES.CART,
-        },
     ],
     PUBLIC: [
         {

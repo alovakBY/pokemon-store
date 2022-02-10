@@ -28,6 +28,8 @@
 .link {
 	font-weight: 600;
 	font-size: 24px;
+	display: flex;
+	align-items: center;
 	transition: border-color .3s, color .3s;
 }
 
@@ -37,6 +39,10 @@
 
 .link + .link {
 	margin-left: 15px;
+}
+
+.link > svg {
+	font-size: 28px;
 }
 
 .active {
@@ -61,7 +67,7 @@
 	cursor: pointer;
 }
 
-.logout > svg {
+.logout > svg{
 	font-size: 24px;
 }
 

@@ -14,11 +14,16 @@ const authBlackListedFields = createBlacklistFilter("signInPage", [
     "errors",
 ]);
 
+const cartBlackListedFields = createBlacklistFilter("cart", [
+    "isLoading",
+    "errors",
+]);
+
 const persistConfig = {
     key: "root",
     storage,
-    whitelist: ["signInPage"],
-    transforms: [authBlackListedFields],
+    whitelist: ["signInPage", "cart"],
+    transforms: [authBlackListedFields, cartBlackListedFields],
 };
 
 const rootReducer = combineReducers({
