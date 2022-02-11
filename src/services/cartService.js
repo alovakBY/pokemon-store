@@ -1,27 +1,30 @@
 import api from "../api/config";
 
 class CartService {
-  static instance = new CartService();
+    static instance = new CartService();
 
-  getCartItems() {
-    return api.get(`/cart`);
-  }
+    getCartItems() {
+        return api.get(`/cart`);
+    }
 
-  setCartItem({ id, name, image, price, quantity }) {
-    const data = { id, name, image, price, quantity };
-    //   console.log(data);
-    return api.post(`/cart/item`, {
-      id,
-      name,
-      image,
-      quantity,
-      price,
-    });
-  }
+    setCartItem({ id, name, image, price, quantity }) {
+        return api.post(`/cart/item`, {
+            id,
+            name,
+            image,
+            quantity,
+            price,
+        });
+    }
 
-  //  updateCartItem;
+    updateCartItem({ id, quantity }) {
+        return api.patch(`/cart/item`, {
+            id,
+            quantity,
+        });
+    }
 
-  //  deleteCartItem;
+    //  deleteCartItem;
 }
 
 export default CartService.instance;

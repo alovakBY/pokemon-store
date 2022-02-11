@@ -1,3 +1,4 @@
+import axios from "axios";
 import api from "../api/config";
 
 class AuthService {
@@ -8,6 +9,7 @@ class AuthService {
             email,
             password,
         };
+
         return api.post("/auth/signIn", signInData);
     }
 

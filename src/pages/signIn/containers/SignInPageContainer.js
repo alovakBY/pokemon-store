@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 
+import { useCart } from "../../../hooks/useCart";
+
 import { SignInLayout } from "../components/SignInLayout";
 
 import * as actions from "../actions";
@@ -26,6 +28,10 @@ export const SignInPageContainer = () => {
             navigate(ROUTE_NAMES.POKEMONS);
         }
     }, [isAuth]);
+
+    useEffect(() => {
+        return () => {};
+    }, []);
 
     const handleSignIn = (email, password) => {
         dispatch(

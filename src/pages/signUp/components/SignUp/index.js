@@ -4,11 +4,22 @@ import {
     Radio,
     FormControlLabel,
     FormLabel,
+    FormControl,
+    InputLabel,
+    OutlinedInput,
+    InputAdornment,
+    IconButton,
 } from "@mui/material";
 
+import { VisibilityOff, Visibility } from "@mui/icons-material";
+
+import { ButtonSubmit } from "../../../../commonComponents/ButtonSubmit";
+
 import classes from "./SignUp.module.css";
+import { useState } from "react";
 
 export const SignUp = ({ formik }) => {
+    const [showPassword, setShowPassword] = useState(false);
     const {
         handleChange,
         handleBlur,
@@ -38,6 +49,45 @@ export const SignUp = ({ formik }) => {
                     <div className={classes.error}>{errors.email}</div>
                 )}
             </div>
+
+            <div>
+                <div className={classes.label}>Password*</div>
+                <FormControl variant="outlined" className={classes.input}>
+                    <InputLabel htmlFor="outlined-adornment-password">
+                        password*
+                    </InputLabel>
+                    <OutlinedInput
+                        id="outlined-adornment-password"
+                        type={showPassword ? "text" : "password"}
+                        value={values.password}
+                        color="dark"
+                        label="password*"
+                        onChange={handleChange("password")}
+                        onBlur={handleBlur("password")}
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                    aria-label="toggle password visibility"
+                                    onClick={() =>
+                                        setShowPassword(!showPassword)
+                                    }
+                                    edge="end"
+                                >
+                                    {showPassword ? (
+                                        <VisibilityOff />
+                                    ) : (
+                                        <Visibility />
+                                    )}
+                                </IconButton>
+                            </InputAdornment>
+                        }
+                    />
+                </FormControl>
+                {touched.password && errors.password && (
+                    <div className={classes.error}>{errors.password}</div>
+                )}
+            </div>
+
             <div>
                 <div className={classes.label}>First name*</div>
                 <TextField
@@ -175,24 +225,6 @@ export const SignUp = ({ formik }) => {
                 </RadioGroup>
             </div>
             <div>
-                <div className={classes.label}>Password*</div>
-                <TextField
-                    className={classes.input}
-                    color="dark"
-                    type="password"
-                    name="password"
-                    label="password*"
-                    variant="outlined"
-                    autoComplete="true"
-                    value={values.password}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                />
-                {touched.password && errors.password && (
-                    <div className={classes.error}>{errors.password}</div>
-                )}
-            </div>
-            <div>
                 <div className={classes.label}>Phone*</div>
                 <TextField
                     className={classes.input}
@@ -210,14 +242,13 @@ export const SignUp = ({ formik }) => {
                     <div className={classes.error}>{errors.phone}</div>
                 )}
             </div>
-            <button
+            <ButtonSubmit
                 className={classes.button}
-                type="submit"
                 disabled={!isValid || !dirty}
-                onClick={handleSubmit}
-            >
-                Sign Up
-            </button>
+                callback={handleSubmit}
+                text={"Sign up"}
+                type={"submit"}
+            />
         </form>
     );
 };

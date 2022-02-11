@@ -19,7 +19,6 @@ export const cartReducer = handleActions(
             };
         },
         [actions.GET_CART_ITEMS_SUCCESS]: (state, { payload }) => {
-            // console.log(payload.response);
             return {
                 ...state,
                 isCart: true,
@@ -36,7 +35,6 @@ export const cartReducer = handleActions(
         },
 
         [actions.SET_CART_ITEM_REQUEST]: (state, { payload }) => {
-            // console.log(payload);
             return {
                 ...state,
                 isLoading: true,

@@ -1,8 +1,20 @@
-import { TextField } from "@mui/material";
+import {
+    TextField,
+    OutlinedInput,
+    InputAdornment,
+    IconButton,
+    InputLabel,
+    FormControl,
+} from "@mui/material";
+import { VisibilityOff, Visibility } from "@mui/icons-material";
+
+import { ButtonSubmit } from "../../../../commonComponents/ButtonSubmit";
 
 import classes from "./SignIn.module.css";
+import { useState } from "react";
 
 export const SignIn = ({ formik }) => {
+    const [showPassword, setShowPassword] = useState(false);
     const {
         values,
         errors,
@@ -35,30 +47,48 @@ export const SignIn = ({ formik }) => {
             </div>
             <div>
                 <div className={classes.label}>Password*</div>
-                <TextField
-                    autoComplete="true"
-                    type="password"
-                    name="password"
-                    label="password*"
-                    variant="outlined"
-                    color="dark"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.password}
-                    className={classes.input}
-                />
+                <FormControl variant="outlined" className={classes.input}>
+                    <InputLabel htmlFor="outlined-adornment-password">
+                        password*
+                    </InputLabel>
+                    <OutlinedInput
+                        id="outlined-adornment-password"
+                        type={showPassword ? "text" : "password"}
+                        value={values.password}
+                        color="dark"
+                        label="password*"
+                        onChange={handleChange("password")}
+                        onBlur={handleBlur("password")}
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                    aria-label="toggle password visibility"
+                                    onClick={() =>
+                                        setShowPassword(!showPassword)
+                                    }
+                                    edge="end"
+                                >
+                                    {showPassword ? (
+                                        <VisibilityOff />
+                                    ) : (
+                                        <Visibility />
+                                    )}
+                                </IconButton>
+                            </InputAdornment>
+                        }
+                    />
+                </FormControl>
                 {touched.password && errors.password && (
                     <div className={classes.error}>{errors.password}</div>
                 )}
             </div>
-            <button
-                disabled={!isValid || !dirty}
-                onClick={handleSubmit}
-                type="submit"
+            <ButtonSubmit
                 className={classes.button}
-            >
-                Sign in
-            </button>
+                disabled={!isValid || !dirty}
+                callback={handleSubmit}
+                text={"Sign in"}
+                type={"submit"}
+            />
         </form>
     );
 };

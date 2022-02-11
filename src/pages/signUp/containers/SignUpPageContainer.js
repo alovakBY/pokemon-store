@@ -14,7 +14,7 @@ import { VALIDATIONS_SCHEMA } from "../../../constants/validations.js";
 
 export const SignUpPageContainer = () => {
     const { isAuth } = useSelector(isAuthSelector);
-    const { message, success, email, password, isLoading, errors } =
+    const { success, email, password, isLoading, errors } =
         useSelector(signUpPageSelector);
 
     const validationsSchema = yup.object().shape({
@@ -37,10 +37,13 @@ export const SignUpPageContainer = () => {
         if (isAuth) {
             navigate(ROUTE_NAMES.POKEMONS);
         }
+    }, [isAuth]);
+
+    useEffect(() => {
         if (success) {
             dispatch(SIGN_IN_REQUEST({ email, password }));
         }
-    }, [isAuth, success]);
+    }, [success]);
 
     const handleSignUp = ({
         country,
@@ -63,7 +66,6 @@ export const SignUpPageContainer = () => {
 
     return (
         <SignUpLayout
-            message={message}
             isLoading={isLoading}
             errors={errors}
             handleSignUp={handleSignUp}

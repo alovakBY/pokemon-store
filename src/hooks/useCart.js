@@ -24,6 +24,10 @@ export const useCart = () => {
         );
     }, []);
 
+    const updateCartItem = useCallback(({ id, quantity }) => {
+        console.log(id, quantity);
+    }, []);
+
     return {
         cartInfo,
         cartLoading,
@@ -31,5 +35,6 @@ export const useCart = () => {
         isCart,
         getCartItems,
         setCartItem,
+        updateCartItem,
     };
 };
