@@ -10,27 +10,22 @@ import { PrivateRoute } from "./privateRoute";
 import { SignUpPageContainer } from "../pages/signUp/containers/SignUpPageContainer";
 
 export const Router = () => {
-    return (
-        <Routes>
-            <Route
-                path={ROUTE_NAMES.SIGN_IN}
-                element={<SignInPageContainer />}
-            />
-            <Route
-                path={ROUTE_NAMES.SIGN_UP}
-                element={<SignUpPageContainer />}
-            />
-            <Route element={<PrivateRoute />}>
-                <Route
-                    path={ROUTE_NAMES.POKEMONS}
-                    element={<PokemonsPageContainer />}
-                />
-                <Route
-                    path={ROUTE_NAMES.POKEMON_DETAILS}
-                    element={<PokemonDetailsContainer />}
-                />
-                <Route path={ROUTE_NAMES.CART} element={<CartContainer />} />
-            </Route>
-        </Routes>
-    );
+  return (
+    <Routes>
+      <Route path={ROUTE_NAMES.HOME} element={<SignInPageContainer />} />
+      <Route path={ROUTE_NAMES.SIGN_IN} element={<SignInPageContainer />} />
+      <Route path={ROUTE_NAMES.SIGN_UP} element={<SignUpPageContainer />} />
+      <Route element={<PrivateRoute />}>
+        <Route
+          path={ROUTE_NAMES.POKEMONS}
+          element={<PokemonsPageContainer />}
+        />
+        <Route
+          path={ROUTE_NAMES.POKEMON_DETAILS}
+          element={<PokemonDetailsContainer />}
+        />
+        <Route path={ROUTE_NAMES.CART} element={<CartContainer />} />
+      </Route>
+    </Routes>
+  );
 };

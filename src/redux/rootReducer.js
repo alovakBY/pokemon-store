@@ -10,28 +10,28 @@ import { signUpPageReducer } from "../pages/signUp/reducers";
 import { cartReducer } from "../pages/cart/reducers";
 
 const authBlackListedFields = createBlacklistFilter("signInPage", [
-    "isLoading",
-    "errors",
+  "isLoading",
+  "errors",
 ]);
 
 const cartBlackListedFields = createBlacklistFilter("cart", [
-    "isLoading",
-    "errors",
+  "isLoading",
+  "errors",
 ]);
 
 const persistConfig = {
-    key: "root",
-    storage,
-    whitelist: ["signInPage", "cart"],
-    transforms: [authBlackListedFields, cartBlackListedFields],
+  key: "root",
+  storage,
+  whitelist: ["signInPage", "cart"],
+  transforms: [authBlackListedFields, cartBlackListedFields],
 };
 
 const rootReducer = combineReducers({
-    pokemonsPage: pokemonsPageReducer,
-    pokemonDetailsPage: pokemonDetailsPageReducer,
-    signInPage: signInPageReducer,
-    signUpPage: signUpPageReducer,
-    cart: cartReducer,
+  pokemonsPage: pokemonsPageReducer,
+  pokemonDetailsPage: pokemonDetailsPageReducer,
+  signInPage: signInPageReducer,
+  signUpPage: signUpPageReducer,
+  cart: cartReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

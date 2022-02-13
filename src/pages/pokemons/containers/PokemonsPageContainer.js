@@ -9,35 +9,34 @@ import * as actions from "../actions";
 
 import { PokemonsLayout } from "../components/PokemonsLayout";
 import { pokemonPageSelector } from "../selectors";
-import { cartSelector } from "../../cart/selectors";
 
 export const PokemonsPageContainer = () => {
-    const [idClickItem, setIdClickItem] = useState(0);
-    const { pokemons, isLoading, errors } = useSelector(pokemonPageSelector);
-    const dispatch = useDispatch();
+  const [idClickItem, setIdClickItem] = useState(0);
+  const { pokemons, isLoading } = useSelector(pokemonPageSelector);
+  const dispatch = useDispatch();
 
-    const [page, handlePageChange] = usePagination("pokemonsCurrentPage");
-    const { cartLoading } = useCart();
+  const [page, handlePageChange] = usePagination("pokemonsCurrentPage");
+  const { cartLoading } = useCart();
 
-    useEffect(() => {
-        dispatch(actions.GET_POKEMONS_REQUEST(page));
-    }, [page]);
+  useEffect(() => {
+    dispatch(actions.GET_POKEMONS_REQUEST(page));
+  }, [page, dispatch]);
 
-    const handleSetIdClickItem = useCallback((id) => {
-        setIdClickItem((state) => (state = id));
-    }, []);
+  const handleSetIdClickItem = useCallback((id) => {
+    setIdClickItem((state) => (state = id));
+  }, []);
 
-    return (
-        <>
-            <PokemonsLayout
-                pokemons={pokemons}
-                page={page}
-                isLoading={isLoading}
-                cartLoading={cartLoading}
-                idClickItem={idClickItem}
-                handlePageChange={handlePageChange}
-                handleSetIdClickItem={handleSetIdClickItem}
-            />
-        </>
-    );
+  return (
+    <>
+      <PokemonsLayout
+        pokemons={pokemons}
+        page={page}
+        isLoading={isLoading}
+        cartLoading={cartLoading}
+        idClickItem={idClickItem}
+        handlePageChange={handlePageChange}
+        handleSetIdClickItem={handleSetIdClickItem}
+      />
+    </>
+  );
 };

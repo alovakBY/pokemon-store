@@ -1,45 +1,69 @@
-import { memo } from "react";
+import { useCallback, useState, memo, useEffect } from "react";
+
 import { useCart } from "../../hooks/useCart";
+
 import classes from "./ButtonCounter.module.css";
 
 export const ButtonCounter = memo(({ name, id, image, price }) => {
-    const { cartInfo, setCartItem, updateCartItem } = useCart();
+  const { cartInfo, setCartItem, updateCartItem, deleteCartItem } = useCart();
 
-    const pokemonItemInCart = cartInfo.itemsList.find((itemCart) => {
-        return id === itemCart.id;
+  const pokemonItemInCart = cartInfo.itemsList.find((itemCart) => {
+    return id === itemCart.id;
+  });
+
+  const handleSetCartItem = useCallback(() => {
+    setCartItem({ name, id, image, price });
+  }, []);
+
+  const handleUpdateCartItemIncrement = useCallback(() => {
+    const pokemonItemIncrement = cartInfo.itemsList.find((itemCart) => {
+      return id === itemCart.id;
     });
+    updateCartItem({
+      id: pokemonItemIncrement.id,
+      quantity: pokemonItemIncrement.quantity + 1,
+    });
+  }, [cartInfo]);
 
-    const handleUpdateCartItemIncrement = () => {
-        const pokemonItemIncrement = cartInfo.itemsList.find((itemCart) => {
-            return id === itemCart.id;
-        });
-        updateCartItem({
-            id: pokemonItemIncrement.id,
-            quantity: pokemonItemIncrement.quantity + 1,
-        });
-    };
+  const handleUpdateCartItemDecrement = useCallback(() => {
+    const pokemonItemIncrement = cartInfo.itemsList.find((itemCart) => {
+      return id === itemCart.id;
+    });
+    updateCartItem({
+      id: pokemonItemIncrement.id,
+      quantity: pokemonItemIncrement.quantity - 1,
+    });
+  }, [cartInfo]);
 
-    return pokemonItemInCart ? (
-        <div className={classes.buttonsWrapper}>
-            <button className={classes.button} /* onClick={onSetItemCart} */>
-                <span>-</span>
-            </button>
-            <span className={classes.screen}>{pokemonItemInCart.quantity}</span>
-            <button
-                className={classes.button}
-                onClick={handleUpdateCartItemIncrement}
-            >
-                <span>+</span>
-            </button>
-        </div>
-    ) : (
-        <div className={classes.buttonWrapper}>
-            <button
-                className={classes.button}
-                onClick={() => setCartItem({ name, id, image, price })}
-            >
-                <span>+</span>
-            </button>
-        </div>
-    );
+  const handleDeleteCartItem = useCallback(() => {
+    deleteCartItem(id);
+  }, [cartInfo]);
+
+  return pokemonItemInCart ? (
+    <div className={classes.buttonsWrapper}>
+      <button
+        className={classes.button}
+        onClick={
+          pokemonItemInCart.quantity === 1
+            ? handleDeleteCartItem
+            : handleUpdateCartItemDecrement
+        }
+      >
+        <span>-</span>
+      </button>
+      <span className={classes.screen}>{pokemonItemInCart.quantity}</span>
+      <button
+        className={classes.button}
+        onClick={handleUpdateCartItemIncrement}
+      >
+        <span>+</span>
+      </button>
+    </div>
+  ) : (
+    <div className={classes.buttonWrapper}>
+      <button className={classes.button} onClick={handleSetCartItem}>
+        <span>+</span>
+      </button>
+    </div>
+  );
 });
