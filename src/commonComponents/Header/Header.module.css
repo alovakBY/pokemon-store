@@ -32,6 +32,7 @@
   display: flex;
   align-items: center;
   transition: border-color 0.3s, color 0.3s;
+  background-color: transparent;
 }
 
 .link:hover {
@@ -42,9 +43,9 @@
   background-color: #212121;
 }
 
-.link + .link {
+/* .link + .link {
   margin-left: 15px;
-}
+} */
 
 .link > svg {
   font-size: 33px;
@@ -62,6 +63,10 @@
 .navigation {
   display: flex;
   align-items: center;
+}
+
+.navigation > div {
+  margin-left: 15px;
 }
 
 .cartQuantity {
