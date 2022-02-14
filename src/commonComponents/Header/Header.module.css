@@ -65,7 +65,8 @@
   align-items: center;
 }
 
-.navigation > div {
+.navigation > div, 
+.navigation > a {
   margin-left: 15px;
 }
 
