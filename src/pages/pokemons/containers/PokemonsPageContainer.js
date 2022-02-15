@@ -22,15 +22,13 @@ export const PokemonsPageContainer = () => {
     }, [page, dispatch]);
 
     return (
-        <>
-            <PokemonsLayout
-                pokemons={pokemons}
-                page={page}
-                isLoading={isLoading}
-                cartLoading={cartLoading}
-                clickedPokemonId={clickedPokemonId}
-                handlePageChange={handlePageChange}
-            />
-        </>
+        <PokemonsLayout
+            pokemons={pokemons}
+            page={page}
+            isLoading={isLoading}
+            cartLoading={cartLoading}
+            clickedPokemonId={clickedPokemonId}
+            handlePageChange={handlePageChange}
+        />
     );
 };

@@ -37,17 +37,13 @@ export const ButtonCounter = memo(({ name, id, image, price }) => {
         });
     }, [cartInfo]);
 
-    const handleDeleteCartItem = useCallback(() => {
-        deleteCartItem(id);
-    }, [cartInfo]);
-
     return pokemonItemInCart ? (
         <div className={classes.buttonsWrapper}>
             <button
                 className={classes.button}
                 onClick={
                     pokemonItemInCart.quantity === 1
-                        ? handleDeleteCartItem
+                        ? () => deleteCartItem(id)
                         : handleUpdateCartItemDecrement
                 }
             >
