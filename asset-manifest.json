@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/react-redux-saga/static/css/main.108553de.css",
-    "main.js": "/react-redux-saga/static/js/main.1311bac8.js",
+    "main.css": "/react-redux-saga/static/css/main.2abe202c.css",
+    "main.js": "/react-redux-saga/static/js/main.d5786418.js",
     "static/media/OpenSans-Regular.ttf": "/react-redux-saga/static/media/OpenSans-Regular.d7d7b8359eeb9cddfba6.ttf",
     "static/media/OpenSans-Bold.ttf": "/react-redux-saga/static/media/OpenSans-Bold.6e27168fc8a5a200a026.ttf",
     "static/media/OpenSans-SemiBold.ttf": "/react-redux-saga/static/media/OpenSans-SemiBold.d7261533b9a545ddc769.ttf",
     "static/media/logo.svg": "/react-redux-saga/static/media/logo.d333de68ddc3943108f7b82e7d75d918.svg",
     "static/media/poke-spinner.svg": "/react-redux-saga/static/media/poke-spinner.85ec711da00b91c81767c5f3c0a92bcc.svg",
-    "static/media/dollar.svg": "/react-redux-saga/static/media/dollar.0a14f0d30a4144a6eb8d700e724894e7.svg",
+    "static/media/dollar.svg": "/react-redux-saga/static/media/dollar.f0dbb06ff1cc9291ab580cddbbab4e53.svg",
     "index.html": "/react-redux-saga/index.html",
-    "main.108553de.css.map": "/react-redux-saga/static/css/main.108553de.css.map",
-    "main.1311bac8.js.map": "/react-redux-saga/static/js/main.1311bac8.js.map"
+    "static/media/close-cart.svg": "/react-redux-saga/static/media/close-cart.514b3d48f9420637260b9201d58e23fa.svg",
+    "main.2abe202c.css.map": "/react-redux-saga/static/css/main.2abe202c.css.map",
+    "main.d5786418.js.map": "/react-redux-saga/static/js/main.d5786418.js.map"
   },
   "entrypoints": [
-    "static/css/main.108553de.css",
-    "static/js/main.1311bac8.js"
+    "static/css/main.2abe202c.css",
+    "static/js/main.d5786418.js"
   ]
 }
