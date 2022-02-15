@@ -10,25 +10,25 @@ import { PokemonsLayout } from "../components/PokemonsLayout";
 import { pokemonPageSelector } from "../selectors";
 
 export const PokemonsPageContainer = () => {
-    const { clickedPokemonId } = useCart();
-    const { pokemons, isLoading } = useSelector(pokemonPageSelector);
-    const dispatch = useDispatch();
+  const { clickedPokemonId } = useCart();
+  const { pokemons, isLoading } = useSelector(pokemonPageSelector);
+  const dispatch = useDispatch();
 
-    const [page, handlePageChange] = usePagination("pokemonsCurrentPage");
-    const { cartLoading } = useCart();
+  const [page, handlePageChange] = usePagination("pokemonsCurrentPage");
+  const { cartLoading } = useCart();
 
-    useEffect(() => {
-        dispatch(actions.GET_POKEMONS_REQUEST(page));
-    }, [page, dispatch]);
+  useEffect(() => {
+    dispatch(actions.GET_POKEMONS_REQUEST(page));
+  }, [page]);
 
-    return (
-        <PokemonsLayout
-            pokemons={pokemons}
-            page={page}
-            isLoading={isLoading}
-            cartLoading={cartLoading}
-            clickedPokemonId={clickedPokemonId}
-            handlePageChange={handlePageChange}
-        />
-    );
+  return (
+    <PokemonsLayout
+      pokemons={pokemons}
+      page={page}
+      isLoading={isLoading}
+      cartLoading={cartLoading}
+      clickedPokemonId={clickedPokemonId}
+      handlePageChange={handlePageChange}
+    />
+  );
 };

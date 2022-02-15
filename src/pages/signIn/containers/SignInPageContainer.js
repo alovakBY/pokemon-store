@@ -25,11 +25,7 @@ export const SignInPageContainer = () => {
     if (isAuth) {
       navigate(ROUTE_NAMES.POKEMONS);
     }
-  }, [isAuth, navigate]);
-
-  useEffect(() => {
-    return () => {};
-  }, []);
+  }, [isAuth]);
 
   const handleSignIn = (email, password) => {
     dispatch(
