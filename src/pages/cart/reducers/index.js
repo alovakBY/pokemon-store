@@ -33,11 +33,12 @@ export const cartReducer = handleActions(
             };
         },
 
-        [actions.SET_CART_ITEM_REQUEST]: (state) => {
+        [actions.SET_CART_ITEM_REQUEST]: (state, { payload }) => {
             return {
                 ...state,
                 isLoading: true,
                 errors: null,
+                clickedPokemonId: payload.id,
             };
         },
         [actions.SET_CART_ITEM_SUCCESS]: (state, { payload }) => {
@@ -55,11 +56,12 @@ export const cartReducer = handleActions(
             };
         },
 
-        [actions.UPDATE_CART_ITEM_REQUEST]: (state) => {
+        [actions.UPDATE_CART_ITEM_REQUEST]: (state, { payload }) => {
             return {
                 ...state,
                 isLoading: true,
                 errors: null,
+                clickedPokemonId: payload.id,
             };
         },
         [actions.UPDATE_CART_ITEM_SUCCESS]: (state, { payload }) => {
@@ -96,6 +98,7 @@ export const cartReducer = handleActions(
             return {
                 ...state,
                 isLoading: true,
+                clickedPokemonId: payload,
             };
         },
         [actions.DELETE_CART_ITEM_SUCCESS]: (state, { payload }) => {

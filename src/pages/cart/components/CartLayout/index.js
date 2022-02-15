@@ -4,11 +4,22 @@ import { Card } from "../Card";
 
 import close from "../../../../static/images/close-cart.svg";
 
-export const CartLayout = ({ toggleDrawer, openCart, cartInfo }) => {
-    const { itemsList } = cartInfo;
-
-    const cardsList = itemsList.map(({ id, name, image, price }) => (
-        <Card key={id} id={id} name={name} image={image} price={price} />
+export const CartLayout = ({
+    cartInfo,
+    cartLoading,
+    clickedPokemonId,
+    toggleDrawer,
+    openCart,
+}) => {
+    const cardsList = cartInfo?.itemsList.map(({ id, name, image, price }) => (
+        <Card
+            key={id}
+            id={id}
+            name={name}
+            image={image}
+            price={price}
+            cartLoading={clickedPokemonId === id ? cartLoading : false}
+        />
     ));
 
     return (

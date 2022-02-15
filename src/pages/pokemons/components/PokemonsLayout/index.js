@@ -8,20 +8,18 @@ export const PokemonsLayout = ({
     pokemons,
     page,
     isLoading,
-    idClickItem,
+    clickedPokemonId,
     cartLoading,
     handlePageChange,
-    handleSetIdClickItem,
 }) => {
     const pokemonsList = pokemons.map(({ id, name, image, price }) => (
         <PokemonCard
-            cartLoading={idClickItem === id ? cartLoading : false}
+            cartLoading={clickedPokemonId === id ? cartLoading : false}
             key={id}
             id={id}
             name={name}
             image={image}
             price={price}
-            handleSetIdClickItem={handleSetIdClickItem}
         />
     ));
     return (
