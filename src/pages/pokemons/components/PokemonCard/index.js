@@ -22,7 +22,14 @@ export const PokemonCard = memo(({ id, name, image, price, cartLoading }) => {
                     {price}
                 </div>
             </NavLink>
-            <ButtonCounter id={id} name={name} image={image} price={price} />
+            <div className={classes.button}>
+                <ButtonCounter
+                    id={id}
+                    name={name}
+                    image={image}
+                    price={price}
+                />
+            </div>
         </div>
     );
 });

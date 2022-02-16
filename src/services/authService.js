@@ -18,6 +18,7 @@ class AuthService {
 
     signOut() {
         localStorage.clear();
+
         window.location.reload();
     }
 }

@@ -43,11 +43,7 @@
   background-color: #212121;
 }
 
-/* .link + .link {
-  margin-left: 15px;
-} */
-
-.link > svg {
+.cart > svg {
   font-size: 33px;
 }
 
@@ -102,4 +98,40 @@
 .logout > span {
   font-weight: 400;
   font-size: 15px;
+}
+
+@media screen and (max-width: 480px) { 
+  .logo {
+    width: 50px;
+  }
+
+  .link {
+    font-size: 20px;
+  }
+
+  .logout > span {
+    display: none;
+  }
+
+  .logout > svg {
+    font-size: 26px;
+  }
+
+  .cart > svg {
+    font-size: 28px;
+  }
+
+  .cartQuantity {
+    min-width: 20px;
+    height: 20px;
+    bottom: -7px;
+    right: -7px;
+    font-size: 12px;
+    border: 2px solid white;
+  }
+
+  .navigation > div, 
+.navigation > a {
+  margin-left: 10px;
+}
 }

@@ -3,7 +3,8 @@ import { useCart } from "../../../hooks/useCart";
 import { CartLayout } from "../components/CartLayout";
 
 export const CartContainer = ({ toggleDrawer, openCart }) => {
-    const { cartLoading, cartInfo, clickedPokemonId } = useCart();
+    const { cartLoading, cartInfo, clickedPokemonId, deleteCartItem } =
+        useCart();
     return (
         <div>
             <CartLayout
@@ -12,6 +13,7 @@ export const CartContainer = ({ toggleDrawer, openCart }) => {
                 clickedPokemonId={clickedPokemonId}
                 toggleDrawer={toggleDrawer}
                 openCart={openCart}
+                deleteCartItem={deleteCartItem}
             />
         </div>
     );

@@ -1,20 +1,20 @@
 import api from "../api/config";
 
 class PokemonService {
-  static instance = new PokemonService();
+    static instance = new PokemonService();
 
-  getPokemons(page) {
-    return api.get("/products", {
-      params: {
-        page,
-        limit: 20,
-      },
-    });
-  }
+    getPokemons(page) {
+        return api.get("/products", {
+            params: {
+                page,
+                limit: 24,
+            },
+        });
+    }
 
-  getPokemonDetails(id) {
-    return api.get(`/products/${id}`);
-  }
+    getPokemonDetails(id) {
+        return api.get(`/products/${id}`);
+    }
 }
 
 export default PokemonService.instance;

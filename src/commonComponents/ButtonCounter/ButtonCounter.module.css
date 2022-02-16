@@ -1,12 +1,10 @@
 .buttonsWrapper {
-	position: absolute;
-	bottom: 30px;
-	right: 30px;
 	display: flex;
 	align-items: center;
 	background-color: #212121;
 	border-radius: 6px;
 	overflow: hidden;
+	box-shadow: 0 5px 10px rgb(0 0 0 / 16%);
 }
 
 .buttonsWrapper > .button {
@@ -20,9 +18,6 @@
 }
 
 .buttonWrapper {
-	position: absolute;
-	bottom: 30px;
-	right: 30px;
 	display: flex;
 	align-items: center;
 	border: 1px solid #d4d4d4;

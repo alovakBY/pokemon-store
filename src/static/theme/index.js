@@ -77,5 +77,20 @@ export const theme = createTheme({
                 },
             },
         },
+        MuiList: {
+            styleOverrides: {
+                root: {
+                    paddingTop: "0px",
+                    paddingBottom: "0px",
+                },
+            },
+        },
+        MuiPaper: {
+            styleOverrides: {
+                root: {
+                    overflowY: "hidden !important",
+                },
+            },
+        },
     },
 });

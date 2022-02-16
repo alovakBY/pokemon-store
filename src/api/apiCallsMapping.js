@@ -4,24 +4,24 @@ import * as signInPageActions from "../pages/signIn/actions";
 import * as signUpPageActions from "../pages/signUp/actions";
 import * as cartActions from "../pages/cart/actions";
 
-import pokemonService from "../services/pokemonService";
-import authService from "../services/authService";
-import cartService from "../services/cartService";
+import PokemonService from "../services/pokemonService";
+import AuthService from "../services/authService";
+import CartService from "../services/cartService";
 
 export const apiCallsMapping = (actionType) => {
-  const actionCallMap = {
-    [pokemonsPageActions.GET_POKEMONS_REQUEST]: pokemonService.getPokemons,
-    [pokemonDetailsPageActions.GET_POKEMON_DETAILS_REQUEST]:
-      pokemonService.getPokemonDetails,
+    const actionCallMap = {
+        [pokemonsPageActions.GET_POKEMONS_REQUEST]: PokemonService.getPokemons,
+        [pokemonDetailsPageActions.GET_POKEMON_DETAILS_REQUEST]:
+            PokemonService.getPokemonDetails,
 
-    [signInPageActions.SIGN_IN_REQUEST]: authService.signIn,
-    [signUpPageActions.SIGN_UP_REQUEST]: authService.signUp,
+        [signInPageActions.SIGN_IN_REQUEST]: AuthService.signIn,
+        [signUpPageActions.SIGN_UP_REQUEST]: AuthService.signUp,
 
-    [cartActions.GET_CART_ITEMS_REQUEST]: cartService.getCartItems,
-    [cartActions.SET_CART_ITEM_REQUEST]: cartService.setCartItem,
-    [cartActions.UPDATE_CART_ITEM_REQUEST]: cartService.updateCartItem,
-    [cartActions.DELETE_CART_ITEM_REQUEST]: cartService.deleteCartItem,
-  };
+        [cartActions.GET_CART_ITEMS_REQUEST]: CartService.getCartItems,
+        [cartActions.SET_CART_ITEM_REQUEST]: CartService.setCartItem,
+        [cartActions.UPDATE_CART_ITEM_REQUEST]: CartService.updateCartItem,
+        [cartActions.DELETE_CART_ITEM_REQUEST]: CartService.deleteCartItem,
+    };
 
-  return actionCallMap[actionType];
+    return actionCallMap[actionType];
 };

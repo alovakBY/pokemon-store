@@ -15,23 +15,20 @@ export const useCart = () => {
 
     const getCartItems = useCallback(() => {
         dispatch(actions.GET_CART_ITEMS_REQUEST());
-    }, [dispatch]);
+    }, []);
 
-    const setCartItem = useCallback(
-        ({ id, name, image, price }) => {
-            const quantity = 1;
-            dispatch(
-                actions.SET_CART_ITEM_REQUEST({
-                    id,
-                    name,
-                    image,
-                    quantity,
-                    price,
-                })
-            );
-        },
-        [dispatch]
-    );
+    const setCartItem = useCallback(({ id, name, image, price }) => {
+        const quantity = 1;
+        dispatch(
+            actions.SET_CART_ITEM_REQUEST({
+                id,
+                name,
+                image,
+                quantity,
+                price,
+            })
+        );
+    }, []);
 
     const updateCartItem = useCallback(({ id, quantity }) => {
         dispatch(actions.UPDATE_CART_ITEM_REQUEST({ id, quantity }));
