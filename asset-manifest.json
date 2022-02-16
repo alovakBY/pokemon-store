@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/react-redux-saga/static/css/main.751374eb.css",
-    "main.js": "/react-redux-saga/static/js/main.74daa9b5.js",
+    "main.css": "/react-redux-saga/static/css/main.b5d459d2.css",
+    "main.js": "/react-redux-saga/static/js/main.f97ddf14.js",
     "static/media/OpenSans-Regular.ttf": "/react-redux-saga/static/media/OpenSans-Regular.d7d7b8359eeb9cddfba6.ttf",
     "static/media/OpenSans-Bold.ttf": "/react-redux-saga/static/media/OpenSans-Bold.6e27168fc8a5a200a026.ttf",
     "static/media/OpenSans-SemiBold.ttf": "/react-redux-saga/static/media/OpenSans-SemiBold.d7261533b9a545ddc769.ttf",
     "static/media/logo.svg": "/react-redux-saga/static/media/logo.d333de68ddc3943108f7b82e7d75d918.svg",
-    "static/media/poke-spinner.svg": "/react-redux-saga/static/media/poke-spinner.ae05ef3097853ddb0c6df2b8da47d58a.svg",
+    "static/media/poke-spinner.svg": "/react-redux-saga/static/media/poke-spinner.85ec711da00b91c81767c5f3c0a92bcc.svg",
     "static/media/dollar.svg": "/react-redux-saga/static/media/dollar.f0dbb06ff1cc9291ab580cddbbab4e53.svg",
     "index.html": "/react-redux-saga/index.html",
+    "static/media/delete-card.svg": "/react-redux-saga/static/media/delete-card.491f38a391ff398204378c5081eff999.svg",
     "static/media/close-cart.svg": "/react-redux-saga/static/media/close-cart.514b3d48f9420637260b9201d58e23fa.svg",
-    "main.751374eb.css.map": "/react-redux-saga/static/css/main.751374eb.css.map",
-    "main.74daa9b5.js.map": "/react-redux-saga/static/js/main.74daa9b5.js.map"
+    "main.b5d459d2.css.map": "/react-redux-saga/static/css/main.b5d459d2.css.map",
+    "main.f97ddf14.js.map": "/react-redux-saga/static/js/main.f97ddf14.js.map"
   },
   "entrypoints": [
-    "static/css/main.751374eb.css",
-    "static/js/main.74daa9b5.js"
+    "static/css/main.b5d459d2.css",
+    "static/js/main.f97ddf14.js"
   ]
 }
