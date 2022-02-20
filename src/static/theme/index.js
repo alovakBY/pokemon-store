@@ -89,7 +89,13 @@ export const theme = createTheme({
             styleOverrides: {
                 root: {
                     overflowY: "hidden !important",
+                    color: "#212121",
                 },
+            },
+        },
+        MuiAccordion: {
+            styleOverrides: {
+                root: {},
             },
         },
     },

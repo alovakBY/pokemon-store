@@ -3,7 +3,14 @@ import { handleActions } from "redux-actions";
 import * as actions from "../actions";
 
 const defaultState = {
-    pokemonInfo: {},
+    pokemonInfo: {
+        name: "",
+        id: null,
+        price: null,
+        image: "",
+        abilities: [],
+        stats: [],
+    },
     isLoading: false,
     errors: null,
 };

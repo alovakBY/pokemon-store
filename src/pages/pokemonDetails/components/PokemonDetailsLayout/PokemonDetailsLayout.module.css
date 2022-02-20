@@ -1,0 +1,65 @@
+.stat {
+    border: 1px solid #e43332;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.statTitle {
+    text-align: center;
+    background-color: #e43332;
+    font-weight: 600;
+    font-size: 20px;
+    color: #fff;
+    padding: 3px;
+}
+
+.statBottom {
+    margin: 0 auto;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.statImg {
+    width: 50px;
+    margin-right: 5px;
+    padding: 10px;
+}
+
+.abilityTitle {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.abilityText {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 767px) {
+    .statImg {
+        padding: 5px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .stat {
+        flex: 0 0 45%;
+        margin-bottom: 0;
+        margin: 5px;
+    }
+
+    .statImg {
+        width: 35px;
+    }
+
+    .abilityText {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .statTitle {
+        font-size: 13px;
+    }
+}
