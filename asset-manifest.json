@@ -1,21 +1,27 @@
 {
   "files": {
-    "main.css": "/react-redux-saga/static/css/main.b5d459d2.css",
-    "main.js": "/react-redux-saga/static/js/main.f97ddf14.js",
+    "main.css": "/react-redux-saga/static/css/main.61a4b25c.css",
+    "main.js": "/react-redux-saga/static/js/main.cc030bc9.js",
     "static/media/OpenSans-Regular.ttf": "/react-redux-saga/static/media/OpenSans-Regular.d7d7b8359eeb9cddfba6.ttf",
     "static/media/OpenSans-Bold.ttf": "/react-redux-saga/static/media/OpenSans-Bold.6e27168fc8a5a200a026.ttf",
     "static/media/OpenSans-SemiBold.ttf": "/react-redux-saga/static/media/OpenSans-SemiBold.d7261533b9a545ddc769.ttf",
+    "static/media/shields.svg": "/react-redux-saga/static/media/shields.41b30c485de684fb3a79ab54fff7219b.svg",
     "static/media/logo.svg": "/react-redux-saga/static/media/logo.d333de68ddc3943108f7b82e7d75d918.svg",
+    "static/media/swords.svg": "/react-redux-saga/static/media/swords.a63fc82cbdf473329f93b4fe239a6f73.svg",
+    "static/media/sword.svg": "/react-redux-saga/static/media/sword.987206a7656b7e2de406d1f94e9b111b.svg",
     "static/media/poke-spinner.svg": "/react-redux-saga/static/media/poke-spinner.85ec711da00b91c81767c5f3c0a92bcc.svg",
-    "static/media/dollar.svg": "/react-redux-saga/static/media/dollar.f0dbb06ff1cc9291ab580cddbbab4e53.svg",
+    "static/media/dollar.svg": "/react-redux-saga/static/media/dollar.0a14f0d30a4144a6eb8d700e724894e7.svg",
+    "static/media/wind.svg": "/react-redux-saga/static/media/wind.f4d4918bccdee923c8174a99441724b2.svg",
     "index.html": "/react-redux-saga/index.html",
-    "static/media/delete-card.svg": "/react-redux-saga/static/media/delete-card.491f38a391ff398204378c5081eff999.svg",
-    "static/media/close-cart.svg": "/react-redux-saga/static/media/close-cart.514b3d48f9420637260b9201d58e23fa.svg",
-    "main.b5d459d2.css.map": "/react-redux-saga/static/css/main.b5d459d2.css.map",
-    "main.f97ddf14.js.map": "/react-redux-saga/static/js/main.f97ddf14.js.map"
+    "static/media/heart.svg": "/react-redux-saga/static/media/heart.ea90a6e1066d3f7c798ff66eb206247d.svg",
+    "static/media/delete-card.svg": "/react-redux-saga/static/media/delete-card.4173d27ebafee93004c7d9a080b659dc.svg",
+    "static/media/shield.svg": "/react-redux-saga/static/media/shield.c70232907e727112107c0a874ad30936.svg",
+    "static/media/close-cart.svg": "/react-redux-saga/static/media/close-cart.1f57d7f985a0375ea85aae4fa11c172c.svg",
+    "main.61a4b25c.css.map": "/react-redux-saga/static/css/main.61a4b25c.css.map",
+    "main.cc030bc9.js.map": "/react-redux-saga/static/js/main.cc030bc9.js.map"
   },
   "entrypoints": [
-    "static/css/main.b5d459d2.css",
-    "static/js/main.f97ddf14.js"
+    "static/css/main.61a4b25c.css",
+    "static/js/main.cc030bc9.js"
   ]
 }
