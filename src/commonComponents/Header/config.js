@@ -1,12 +1,7 @@
 import { ROUTE_NAMES } from "../../routes/routeNames";
 
 export const NAVIGATION = {
-    PRIVATE: [
-        {
-            title: "store",
-            path: ROUTE_NAMES.POKEMONS,
-        },
-    ],
+    PRIVATE: [],
     PUBLIC: [
         {
             title: "sign in",

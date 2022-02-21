@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import { useMemo } from "react";
 import { Container } from "@mui/material";
 
+import { StoreButton } from "./components/StoreButton";
+import { AccountButton } from "./components/AccountButton";
 import { CartButton } from "./components/CartButton";
 import { LogoutButton } from "./components/LogoutButton";
 
@@ -47,6 +49,8 @@ export const Header = () => {
                         })}
                         {isAuth && (
                             <>
+                                <StoreButton />
+                                <AccountButton />
                                 <CartButton />
                                 <LogoutButton />
                             </>

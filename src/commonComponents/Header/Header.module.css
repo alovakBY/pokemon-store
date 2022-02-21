@@ -114,11 +114,11 @@
     }
 
     .logout > svg {
-        font-size: 26px;
+        font-size: 28px;
     }
 
     .cart > svg {
-        font-size: 28px;
+        /* font-size: 28px; */
     }
 
     .cartQuantity {
