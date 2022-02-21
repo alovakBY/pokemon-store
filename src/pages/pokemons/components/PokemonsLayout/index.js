@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import { PokemonCard } from "../PokemonCard";
 import { Pagination } from "../../../../commonComponents/Pagination";
 import { Spinner } from "../../../../commonComponents/Spinner";
@@ -43,4 +45,13 @@ export const PokemonsLayout = ({
             </div>
         </div>
     );
+};
+
+PokemonsLayout.propTypes = {
+    pokemons: PropTypes.array.isRequired,
+    page: PropTypes.number,
+    isLoading: PropTypes.bool.isRequired,
+    clickedPokemonId: PropTypes.number,
+    cartLoading: PropTypes.bool,
+    handlePageChange: PropTypes.func,
 };
