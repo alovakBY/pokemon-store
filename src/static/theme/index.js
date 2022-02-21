@@ -89,6 +89,7 @@ export const theme = createTheme({
             styleOverrides: {
                 root: {
                     overflowY: "hidden !important",
+                    height: "100vh !important",
                     color: "#212121",
                 },
             },
