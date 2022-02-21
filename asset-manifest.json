@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/react-redux-saga/static/css/main.61a4b25c.css",
-    "main.js": "/react-redux-saga/static/js/main.cc030bc9.js",
+    "main.css": "/react-redux-saga/static/css/main.36e81917.css",
+    "main.js": "/react-redux-saga/static/js/main.c3737e7f.js",
     "static/media/OpenSans-Regular.ttf": "/react-redux-saga/static/media/OpenSans-Regular.d7d7b8359eeb9cddfba6.ttf",
     "static/media/OpenSans-Bold.ttf": "/react-redux-saga/static/media/OpenSans-Bold.6e27168fc8a5a200a026.ttf",
     "static/media/OpenSans-SemiBold.ttf": "/react-redux-saga/static/media/OpenSans-SemiBold.d7261533b9a545ddc769.ttf",
+    "static/media/empty-cart.svg": "/react-redux-saga/static/media/empty-cart.8801890e2a1e90590ba2c4057e53035f.svg",
     "static/media/shields.svg": "/react-redux-saga/static/media/shields.41b30c485de684fb3a79ab54fff7219b.svg",
     "static/media/logo.svg": "/react-redux-saga/static/media/logo.d333de68ddc3943108f7b82e7d75d918.svg",
     "static/media/swords.svg": "/react-redux-saga/static/media/swords.a63fc82cbdf473329f93b4fe239a6f73.svg",
@@ -17,11 +18,11 @@
     "static/media/delete-card.svg": "/react-redux-saga/static/media/delete-card.4173d27ebafee93004c7d9a080b659dc.svg",
     "static/media/shield.svg": "/react-redux-saga/static/media/shield.c70232907e727112107c0a874ad30936.svg",
     "static/media/close-cart.svg": "/react-redux-saga/static/media/close-cart.1f57d7f985a0375ea85aae4fa11c172c.svg",
-    "main.61a4b25c.css.map": "/react-redux-saga/static/css/main.61a4b25c.css.map",
-    "main.cc030bc9.js.map": "/react-redux-saga/static/js/main.cc030bc9.js.map"
+    "main.36e81917.css.map": "/react-redux-saga/static/css/main.36e81917.css.map",
+    "main.c3737e7f.js.map": "/react-redux-saga/static/js/main.c3737e7f.js.map"
   },
   "entrypoints": [
-    "static/css/main.61a4b25c.css",
-    "static/js/main.cc030bc9.js"
+    "static/css/main.36e81917.css",
+    "static/js/main.c3737e7f.js"
   ]
 }
