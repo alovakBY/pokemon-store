@@ -2,7 +2,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 15px 12px;
+	padding: 10px;
+	border-bottom: 1px solid #e6e6e6;
 }
 
 .item  > div:first-child {
@@ -17,4 +18,9 @@
 .left {
 	display: flex;
 	align-items: center;
+}
+
+.img {
+	width: 60px;
+	margin-right: 10px;
 }

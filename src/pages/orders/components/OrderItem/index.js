@@ -5,7 +5,7 @@ export const OrderItem = ({ pokemon }) => {
     return (
         <div className={classes.item}>
             <div className={classes.left}>
-                <img src={pokemon.image} />
+                <img className={classes.img} src={pokemon.image} />
                 <div>
                     {pokemon.name} x {pokemon.quantity}
                 </div>

@@ -13,7 +13,7 @@
 }
 
 .activeOrderTop > span:first-child {
-	margin-left: 50px;
+	margin-left: 20px;
 	flex: 1 0 auto;
 }
 .activeOrderTop > span:last-child {
