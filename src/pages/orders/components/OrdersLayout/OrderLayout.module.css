@@ -1,23 +1,59 @@
-.activeOrder {
-	max-width: 50%;
-	margin: 0 auto;
+.activeOrderWrapper {
+    width: 50%;
 }
 
-.activeOrderTop {
-	display: flex;
-	justify-content: space-between;
-	background-color: white;
-	padding: 15px 12px;
-	font-size: 16px;
-	font-weight: 600;
+.tableTitle {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
-.activeOrderTop > span:first-child {
-	margin-left: 20px;
-	flex: 1 0 auto;
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
 }
-.activeOrderTop > span:last-child {
-	flex: 0 0 auto;
-	width: 25%;
-	text-align: center;
+
+.tableTop {
+    background-color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.tableTop th,
+.tableTop tr {
+    padding: 15px 12px;
+    text-align: left;
+}
+
+.tableBottom {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.tableBottom th,
+.tableBottom tr {
+    padding: 10px;
+    text-align: left;
+    border: none;
+}
+
+.buttonWrapper {
+    text-align: right;
+}
+
+.buttonWrapper > button {
+    background: #212121;
+    border: 1px solid;
+    border-color: #212121;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px 28px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.buttonWrapper > button:hover {
+    background-color: #3a3a3a;
 }

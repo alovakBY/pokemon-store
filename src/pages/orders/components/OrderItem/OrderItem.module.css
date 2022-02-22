@@ -1,26 +1,37 @@
-.item {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 10px;
-	border-bottom: 1px solid #e6e6e6;
+.tr {
+    border-bottom: 1px solid #e6e6e6;
 }
 
-.item  > div:first-child {
-	flex: 1 0 auto;
-}
-.item  > div:last-child {
-	flex: 0 0 auto;
-	width: 25%;
-	text-align: center;
+.tr td {
+    padding: 0px 10px;
 }
 
-.left {
-	display: flex;
-	align-items: center;
+.tdLeft {
+    display: flex;
+    align-items: center;
 }
 
 .img {
-	width: 60px;
-	margin-right: 10px;
+    width: 60px;
+    margin-right: 10px;
+}
+
+.nameWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.symbol {
+    display: inline-block;
+    transform: rotate(45deg);
+    margin-right: 5px;
+}
+
+.quantity {
+    font-weight: 600;
 }

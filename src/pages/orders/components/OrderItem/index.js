@@ -1,16 +1,17 @@
 import classes from "./OrderItem.module.css";
 
 export const OrderItem = ({ pokemon }) => {
-    console.log(pokemon);
     return (
-        <div className={classes.item}>
-            <div className={classes.left}>
+        <tr className={classes.tr}>
+            <td className={classes.tdLeft}>
                 <img className={classes.img} src={pokemon.image} />
-                <div>
-                    {pokemon.name} x {pokemon.quantity}
+                <div className={classes.nameWrapper}>
+                    <span className={classes.name}>{pokemon.name}</span>
+                    <span className={classes.symbol}>+</span>
+                    <span className={classes.quantity}>{pokemon.quantity}</span>
                 </div>
-            </div>
-            <div>${pokemon.price * pokemon.quantity}</div>
-        </div>
+            </td>
+            <td>${pokemon.price * pokemon.quantity}</td>
+        </tr>
     );
 };
