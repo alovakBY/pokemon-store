@@ -1,0 +1,23 @@
+.activeOrder {
+	max-width: 50%;
+	margin: 0 auto;
+}
+
+.activeOrderTop {
+	display: flex;
+	justify-content: space-between;
+	background-color: white;
+	padding: 15px 12px;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.activeOrderTop > span:first-child {
+	margin-left: 50px;
+	flex: 1 0 auto;
+}
+.activeOrderTop > span:last-child {
+	flex: 0 0 auto;
+	width: 25%;
+	text-align: center;
+}

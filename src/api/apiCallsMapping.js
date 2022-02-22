@@ -3,10 +3,12 @@ import * as pokemonDetailsPageActions from "../pages/pokemonDetails/actions";
 import * as signInPageActions from "../pages/signIn/actions";
 import * as signUpPageActions from "../pages/signUp/actions";
 import * as cartActions from "../pages/cart/actions";
+import * as orderActions from "../pages/orders/actions";
 
 import PokemonService from "../services/pokemonService";
 import AuthService from "../services/authService";
 import CartService from "../services/cartService";
+import OrderService from "../services/orderService";
 
 export const apiCallsMapping = (actionType) => {
     const actionCallMap = {
@@ -21,6 +23,9 @@ export const apiCallsMapping = (actionType) => {
         [cartActions.SET_CART_ITEM_REQUEST]: CartService.setCartItem,
         [cartActions.UPDATE_CART_ITEM_REQUEST]: CartService.updateCartItem,
         [cartActions.DELETE_CART_ITEM_REQUEST]: CartService.deleteCartItem,
+
+        [orderActions.GET_ORDERS_REQUEST]: OrderService.getOrders,
+        [orderActions.SET_ORDER_REQUEST]: OrderService.setOrders,
     };
 
     return actionCallMap[actionType];

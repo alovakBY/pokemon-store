@@ -1,6 +1,9 @@
-import { Box, Drawer, List } from "@mui/material";
+import { NavLink } from "react-router-dom";
+import { Box, Drawer } from "@mui/material";
 
 import { Card } from "../Card";
+
+import { ROUTE_NAMES } from "../../../../routes/routeNames";
 
 import close from "../../../../static/images/close-cart.svg";
 import emptyCart from "../../../../static/images/empty-cart.svg";
@@ -37,6 +40,7 @@ export const CartLayout = ({
                     <h3 className={classes.title}>Shopping Cart</h3>
                     <img
                         src={close}
+                        alt="close"
                         onClick={toggleDrawer}
                         className={classes.close}
                     />
@@ -56,11 +60,12 @@ export const CartLayout = ({
                     </div>
                 </Box>
                 <div className={classes.buttonWrapper}>
-                    <button
+                    <NavLink
+                        to={ROUTE_NAMES.ORDERS}
+                        onClick={toggleDrawer}
                         className={`${classes.button} ${
                             cardsList.length === 0 ? classes.disabled : ""
                         }`}
-                        onClick={() => console.log("click")}
                     >
                         <span className={classes.buttonText}>
                             Proceed To Checkout
@@ -68,7 +73,7 @@ export const CartLayout = ({
                         <span className={classes.totalPrice}>
                             ${cartInfo.totalPrice}
                         </span>
-                    </button>
+                    </NavLink>
                 </div>
             </Drawer>
         </>

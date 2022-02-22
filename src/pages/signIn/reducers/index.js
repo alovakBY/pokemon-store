@@ -4,7 +4,14 @@ import { LOCAL_STORAGE_KEYS } from "../../../constants/localStorageKeys";
 import * as actions from "../actions";
 
 const defaultState = {
-    userData: {},
+    userData: {
+        address: {},
+        phone: "",
+        email: "",
+        firstName: "",
+        lastName: "",
+        gender: "",
+    },
     isLoading: false,
     errors: null,
     isAuth: false,

@@ -1,0 +1,20 @@
+.item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px 12px;
+}
+
+.item  > div:first-child {
+	flex: 1 0 auto;
+}
+.item  > div:last-child {
+	flex: 0 0 auto;
+	width: 25%;
+	text-align: center;
+}
+
+.left {
+	display: flex;
+	align-items: center;
+}
