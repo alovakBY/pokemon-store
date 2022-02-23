@@ -1,9 +1,9 @@
 import "regenerator-runtime/runtime";
 import { all } from "redux-saga/effects";
-// import { pokemonPageWatcher } from "../pages/pokemons/sagas";
 
 import { watchRequest } from "../api/watchRequest";
+import { loginWatcher, loadCart } from "../api/loadCartSaga";
 
 export function* rootSaga() {
-  yield all([watchRequest()]);
+    yield all([watchRequest(), loginWatcher(), loadCart()]);
 }

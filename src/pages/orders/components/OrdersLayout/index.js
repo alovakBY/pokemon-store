@@ -24,7 +24,14 @@ export const OrdersLayout = ({ itemsList, totalPrice, handleSetOrder }) => {
                     </thead>
                 </table>
                 <div className={classes.buttonWrapper}>
-                    <button onClick={handleSetOrder}>Place order</button>
+                    <button
+                        onClick={handleSetOrder}
+                        className={
+                            itemsList.length === 0 ? classes.disabled : ""
+                        }
+                    >
+                        Place order
+                    </button>
                 </div>
             </div>
         </div>

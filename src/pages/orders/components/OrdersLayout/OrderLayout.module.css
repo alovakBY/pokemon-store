@@ -57,3 +57,8 @@
 .buttonWrapper > button:hover {
     background-color: #3a3a3a;
 }
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}

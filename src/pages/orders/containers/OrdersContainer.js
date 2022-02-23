@@ -12,8 +12,6 @@ export const OrdersContainer = () => {
     const { cartInfo } = useCart();
     const { customerId, itemsList, totalPrice } = cartInfo;
 
-    console.log(itemsList);
-
     const handleSetOrder = useCallback(() => {
         dispatch(
             actions.SET_ORDER_REQUEST({ customerId, itemsList, totalPrice })
