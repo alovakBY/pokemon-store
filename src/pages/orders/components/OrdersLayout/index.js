@@ -1,6 +1,6 @@
 import { Spinner } from "../../../../commonComponents/Spinner";
 import { ActiveOrders } from "../ActiveOrders";
-import { CompletedOrderItem } from "../CompletedOrders";
+import { CompletedOrders } from "../CompletedOrders";
 
 import classes from "./OrderLayout.module.css";
 
@@ -11,15 +11,6 @@ export const OrdersLayout = ({
     isLoading,
     handleSetOrder,
 }) => {
-    const completedOrders = orders.map(
-        ({ createdAt, totalPrice, itemsList }) => {
-            <CompletedOrderItem
-                createdAt={createdAt}
-                totalPrice={totalPrice}
-                itemsList={itemsList}
-            />;
-        }
-    );
     return (
         <div className={classes.container}>
             <div className={classes.activeOrderWrapper}>
@@ -39,8 +30,9 @@ export const OrdersLayout = ({
             </div>
             <div className={classes.completedOrdersWrapper}>
                 <div className={classes.completedOrdersTitle}>
-                    Completed orders:
+                    Completed orders
                 </div>
+                <CompletedOrders orders={orders} />
             </div>
         </div>
     );
