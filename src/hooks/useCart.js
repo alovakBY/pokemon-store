@@ -35,7 +35,7 @@ export const useCart = () => {
     }, []);
 
     const deleteCartItem = useCallback((id) => {
-        dispatch(actions.DELETE_CART_ITEM_REQUEST(+id));
+        dispatch(actions.DELETE_CART_ITEM_REQUEST({ id: +id }));
     }, []);
 
     return {

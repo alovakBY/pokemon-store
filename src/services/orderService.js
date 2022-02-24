@@ -8,7 +8,6 @@ class OrderService {
     }
 
     setOrders({ customerId, totalPrice, itemsList }) {
-        console.log(customerId, totalPrice, itemsList);
         return api.post(`/order`, {
             customerId,
             totalPrice,

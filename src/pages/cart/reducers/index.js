@@ -1,4 +1,4 @@
-import { handleActions } from "redux-actions";
+import { handleActions, combineActions } from "redux-actions";
 
 import * as actions from "../actions";
 
@@ -22,6 +22,20 @@ export const cartReducer = handleActions(
                 errors: null,
             };
         },
+
+        [combineActions(
+            actions.SET_CART_ITEM_REQUEST,
+            actions.UPDATE_CART_ITEM_REQUEST,
+            actions.DELETE_CART_ITEM_REQUEST
+        )]: (state, { payload }) => {
+            return {
+                ...state,
+                isLoading: true,
+                errors: null,
+                clickedPokemonId: payload.id,
+            };
+        },
+
         [actions.GET_CART_ITEMS_SUCCESS]: (state, { payload }) => {
             return {
                 ...state,
@@ -29,23 +43,7 @@ export const cartReducer = handleActions(
                 isLoading: false,
             };
         },
-        [actions.GET_CART_ITEMS_FAIL]: (state, { payload }) => {
-            console.log(payload);
-            return {
-                ...state,
-                isLoading: false,
-                errors: payload.response.message,
-            };
-        },
 
-        [actions.SET_CART_ITEM_REQUEST]: (state, { payload }) => {
-            return {
-                ...state,
-                isLoading: true,
-                errors: null,
-                clickedPokemonId: payload.id,
-            };
-        },
         [actions.SET_CART_ITEM_SUCCESS]: (state, { payload }) => {
             return {
                 ...state,
@@ -53,22 +51,7 @@ export const cartReducer = handleActions(
                 isLoading: false,
             };
         },
-        [actions.SET_CART_ITEM_FAIL]: (state, { payload }) => {
-            return {
-                ...state,
-                isLoading: false,
-                errors: payload.response.message,
-            };
-        },
 
-        [actions.UPDATE_CART_ITEM_REQUEST]: (state, { payload }) => {
-            return {
-                ...state,
-                isLoading: true,
-                errors: null,
-                clickedPokemonId: payload.id,
-            };
-        },
         [actions.UPDATE_CART_ITEM_SUCCESS]: (state, { payload }) => {
             const cartInfoCopy = { ...state.cartInfo };
             const updatedItemIndex = cartInfoCopy.itemsList.findIndex(
@@ -91,21 +74,7 @@ export const cartReducer = handleActions(
                 isLoading: false,
             };
         },
-        [actions.UPDATE_CART_ITEM_FAIL]: (state, { payload }) => {
-            return {
-                ...state,
-                isLoading: false,
-                errors: payload.response.message,
-            };
-        },
 
-        [actions.DELETE_CART_ITEM_REQUEST]: (state, { payload }) => {
-            return {
-                ...state,
-                isLoading: true,
-                clickedPokemonId: payload,
-            };
-        },
         [actions.DELETE_CART_ITEM_SUCCESS]: (state, { payload }) => {
             const cartInfoCopy = { ...state.cartInfo };
             const updatedItemIndex = cartInfoCopy.itemsList.findIndex(
@@ -124,9 +93,19 @@ export const cartReducer = handleActions(
                 isLoading: false,
             };
         },
-        [actions.DELETE_CART_ITEM_FAIL]: (state, { payload }) => {
+
+        [combineActions(
+            actions.GET_CART_ITEMS_FAIL,
+            actions.SET_CART_ITEM_FAIL,
+            actions.UPDATE_CART_ITEM_FAIL,
+            actions.DELETE_CART_ITEM_FAIL
+        )]: (state, { payload }) => {
             console.log(payload);
-            return state;
+            return {
+                ...state,
+                isLoading: false,
+                errors: payload.response.message,
+            };
         },
     },
     defaultState

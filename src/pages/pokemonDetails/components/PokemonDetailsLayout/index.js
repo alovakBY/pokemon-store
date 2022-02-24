@@ -1,7 +1,8 @@
-import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
-import { ExpandMore } from "@mui/icons-material";
+// import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
+// import { ExpandMore } from "@mui/icons-material";
 
 import { Spinner } from "../../../../commonComponents/Spinner";
+import { Accordion } from "../../../../commonComponents/Accordion";
 import { PokemonDetails } from "../PokemonDetails";
 
 import { POKEMON_DETAILS_STATS_IMAGES } from "../../constants";
@@ -17,16 +18,11 @@ export const PokemonDetailsLayout = ({
 
     const abilitiesBlock = abilities.map((ability) => {
         return (
-            <Accordion key={ability.title}>
-                <AccordionSummary expandIcon={<ExpandMore />}>
-                    <div className={classes.abilityTitle}>{ability.title}</div>
-                </AccordionSummary>
-                <AccordionDetails>
-                    <div className={classes.abilityText}>
-                        {ability.description}
-                    </div>
-                </AccordionDetails>
-            </Accordion>
+            <Accordion
+                key={ability.title}
+                title={ability.title}
+                description={ability.description}
+            />
         );
     });
 

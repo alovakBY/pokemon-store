@@ -29,14 +29,14 @@
     padding: 10px;
 }
 
-.abilityTitle {
+/* .abilityTitle {
     font-weight: 600;
     font-size: 24px;
 }
 
 .abilityText {
     font-size: 20px;
-}
+} */
 
 @media screen and (max-width: 767px) {
     .statImg {

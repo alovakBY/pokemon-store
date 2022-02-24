@@ -1,37 +1,45 @@
-import { OrderItem } from "../OrderItem";
+import { Spinner } from "../../../../commonComponents/Spinner";
+import { ActiveOrders } from "../ActiveOrders";
+import { CompletedOrderItem } from "../CompletedOrders";
 
 import classes from "./OrderLayout.module.css";
 
-export const OrdersLayout = ({ itemsList, totalPrice, handleSetOrder }) => {
-    const ActiveOrder = itemsList.map(({ id, ...pokemon }) => {
-        return <OrderItem key={id} pokemon={pokemon} />;
-    });
+export const OrdersLayout = ({
+    orders,
+    itemsList,
+    totalPrice,
+    isLoading,
+    handleSetOrder,
+}) => {
+    const completedOrders = orders.map(
+        ({ createdAt, totalPrice, itemsList }) => {
+            <CompletedOrderItem
+                createdAt={createdAt}
+                totalPrice={totalPrice}
+                itemsList={itemsList}
+            />;
+        }
+    );
     return (
-        <div>
+        <div className={classes.container}>
             <div className={classes.activeOrderWrapper}>
-                <div className={classes.tableTitle}>Your active order</div>
-                <table className={classes.table}>
-                    <thead>
-                        <tr className={classes.tableTop}>
-                            <th>Product</th>
-                            <th>Subtotal</th>
-                        </tr>
-                        {ActiveOrder}
-                        <tr className={classes.tableBottom}>
-                            <th>Total</th>
-                            <th>${totalPrice}</th>
-                        </tr>
-                    </thead>
-                </table>
-                <div className={classes.buttonWrapper}>
-                    <button
-                        onClick={handleSetOrder}
-                        className={
-                            itemsList.length === 0 ? classes.disabled : ""
-                        }
-                    >
-                        Place order
-                    </button>
+                {isLoading ? <Spinner screen={false} /> : null}
+                <div className={classes.tableTitle}>Active order:</div>
+                {itemsList.length === 0 ? (
+                    <div>No active orders</div>
+                ) : (
+                    <>
+                        <ActiveOrders
+                            itemsList={itemsList}
+                            totalPrice={totalPrice}
+                            handleSetOrder={handleSetOrder}
+                        />
+                    </>
+                )}
+            </div>
+            <div className={classes.completedOrdersWrapper}>
+                <div className={classes.completedOrdersTitle}>
+                    Completed orders:
                 </div>
             </div>
         </div>

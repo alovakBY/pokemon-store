@@ -1,0 +1,128 @@
+.tr {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.tr td {
+    padding: 0px 10px;
+}
+
+.tdLeft {
+    display: flex;
+    align-items: center;
+}
+
+.img {
+    width: 60px;
+    margin-right: 10px;
+}
+
+.nameWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.symbol {
+    display: inline-block;
+    transform: rotate(45deg);
+    margin-right: 5px;
+}
+
+.quantity {
+    font-weight: 600;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.tableTop {
+    background-color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.tableTop th,
+.tableTop tr {
+    padding: 15px 12px;
+    text-align: left;
+}
+
+.tableBottom {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.tableBottom th,
+.tableBottom tr {
+    padding: 10px;
+    text-align: left;
+    border: none;
+}
+
+.buttonWrapper {
+    text-align: right;
+}
+
+.buttonWrapper > button {
+    background: #212121;
+    border: 1px solid;
+    border-color: #212121;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px 28px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.buttonWrapper > button:hover {
+    background-color: #3a3a3a;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 480px) {
+    .tr td {
+        padding: 0px ;
+    }
+    .tr td:last-child{
+        text-align: center;
+    }
+
+    .img {
+        width: 50px;
+        margin-right: 5px;
+    }
+
+    .tableBottom th:last-child{
+        text-align: center;
+    }
+}
+@media screen and (max-width: 360px) {
+    .tr td:last-child{
+        text-align: right;
+    }
+
+    .tableBottom {
+        font-size: 20px;
+    }
+
+    .tableBottom th,
+    .tableBottom tr {
+        padding: 10px 5px;
+    }
+
+    .tableBottom th:last-child{
+        text-align: right;
+    }
+}

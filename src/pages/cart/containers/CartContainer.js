@@ -5,6 +5,7 @@ import { CartLayout } from "../components/CartLayout";
 export const CartContainer = ({ toggleDrawer, openCart }) => {
     const { cartLoading, cartInfo, clickedPokemonId, deleteCartItem } =
         useCart();
+
     return (
         <div>
             <CartLayout
