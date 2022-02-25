@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/react-redux-saga/static/css/main.5f3b5ee4.css",
-    "main.js": "/react-redux-saga/static/js/main.a5eedaf8.js",
+    "main.css": "/react-redux-saga/static/css/main.bd994013.css",
+    "main.js": "/react-redux-saga/static/js/main.bb77cba2.js",
+    "static/media/orders-bg.jpg": "/react-redux-saga/static/media/orders-bg.f29a874257715795a72f.jpg",
     "static/media/OpenSans-Regular.ttf": "/react-redux-saga/static/media/OpenSans-Regular.d7d7b8359eeb9cddfba6.ttf",
     "static/media/OpenSans-Bold.ttf": "/react-redux-saga/static/media/OpenSans-Bold.6e27168fc8a5a200a026.ttf",
     "static/media/OpenSans-SemiBold.ttf": "/react-redux-saga/static/media/OpenSans-SemiBold.d7261533b9a545ddc769.ttf",
@@ -19,11 +20,11 @@
     "static/media/delete-card.svg": "/react-redux-saga/static/media/delete-card.491f38a391ff398204378c5081eff999.svg",
     "static/media/shield.svg": "/react-redux-saga/static/media/shield.c70232907e727112107c0a874ad30936.svg",
     "static/media/close-cart.svg": "/react-redux-saga/static/media/close-cart.514b3d48f9420637260b9201d58e23fa.svg",
-    "main.5f3b5ee4.css.map": "/react-redux-saga/static/css/main.5f3b5ee4.css.map",
-    "main.a5eedaf8.js.map": "/react-redux-saga/static/js/main.a5eedaf8.js.map"
+    "main.bd994013.css.map": "/react-redux-saga/static/css/main.bd994013.css.map",
+    "main.bb77cba2.js.map": "/react-redux-saga/static/js/main.bb77cba2.js.map"
   },
   "entrypoints": [
-    "static/css/main.5f3b5ee4.css",
-    "static/js/main.a5eedaf8.js"
+    "static/css/main.bd994013.css",
+    "static/js/main.bb77cba2.js"
   ]
 }
