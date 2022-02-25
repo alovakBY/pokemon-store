@@ -38,9 +38,9 @@ export const ActiveOrders = ({ itemsList, totalPrice, handleSetOrder }) => {
                     </tr>
                 </thead>
             </table>
-            <div className={classes.buttonWrapper}>
+            {/* <div className={classes.buttonWrapper}>
                 <button onClick={handleSetOrder}>Place order</button>
-            </div>
+            </div> */}
         </>
     );
 };

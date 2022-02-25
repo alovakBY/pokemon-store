@@ -1,16 +1,22 @@
 import { useSelector } from "react-redux";
-import { orderSeletor } from "../../orders/selectors";
+import { NavLink } from "react-router-dom";
+
+import { Account } from "../components/Account";
+import { Button } from "../../../commonComponents/Button";
+
 import { isAuthSelector } from "../../signIn/selectors/isAuthSelector";
-import { AccountLayout } from "../components/AccountLayout";
+import { ROUTE_NAMES } from "../../../routes/routeNames";
+
+import classes from "./AccountContainer.module.css";
 
 export const AccountContainer = () => {
     const { userData } = useSelector(isAuthSelector);
-    const { orders } = useSelector(orderSeletor);
-    console.log(orders);
-    console.log(userData);
     return (
         <div>
-            <AccountLayout userData={userData} />
+            <Account userData={userData} />
+            <NavLink to={ROUTE_NAMES.ORDERS} className={classes.button}>
+                <Button text="My orders" />
+            </NavLink>
         </div>
     );
 };

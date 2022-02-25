@@ -13,7 +13,7 @@ import {
 
 import { VisibilityOff, Visibility } from "@mui/icons-material";
 
-import { ButtonSubmit } from "../../../../commonComponents/ButtonSubmit";
+import { Button } from "../../../../commonComponents/Button";
 
 import classes from "./SignUp.module.css";
 import { useState } from "react";
@@ -242,13 +242,14 @@ export const SignUp = ({ formik }) => {
                     <div className={classes.error}>{errors.phone}</div>
                 )}
             </div>
-            <ButtonSubmit
-                className={classes.button}
-                disabled={!isValid || !dirty}
-                callback={handleSubmit}
-                text={"Sign up"}
-                type={"submit"}
-            />
+            <div className={classes.buttonWrapper}>
+                <Button
+                    disabled={!isValid || !dirty}
+                    callback={handleSubmit}
+                    text={"Sign up"}
+                    type={"submit"}
+                />
+            </div>
         </form>
     );
 };

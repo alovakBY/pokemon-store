@@ -1,3 +1,41 @@
+.title {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 150px;
+	background: url(./../../../../static/images/orders-bg.jpg) no-repeat center;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 110px;
+}
+
+.title > span {
+	color: white;
+	font-weight: 700;
+	font-size: 36px;
+	position: absolute;
+	z-index: 2;
+}
+
+.title:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: .4;
+	z-index: 0;
+}
+
+.marginTop {
+    margin-top: 290px;
+}
+
 .activeOrderWrapper {
     position: relative;
     width: 70%;
@@ -19,8 +57,25 @@
     margin-bottom: 20px;
 }
 
+.buttonWrapper {
+    text-align: right;
+}
+
+.buttonWrapper > div{
+    display: inline-block;
+}
+
+@media screen and (max-width: 1199px) {
+	.title {
+		padding: 100px;
+	}
+
+	.marginTop {
+		margin-top: 190px;
+	}
+}
 @media screen and (max-width: 991px) {
-    .container {
+    .marginTop {
         flex-direction: column;
         align-items: center;
     }
@@ -33,9 +88,38 @@
         width: 100%;
     }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 767px) {
+	.title {
+		padding: 80px;
+	}
 
-    .activeOrderWrapper {
+	.marginTop {
+		margin-top: 140px;
+	}
+
+
+}
+@media screen and (max-width: 480px) {
+	.title {
+		padding: 60px;
+		margin-top: 85px;
+	}
+
+	.marginTop {
+		margin-top: 110px;
+	}
+
+	.title > span {
+		font-size: 32px;
+	}
+
+	.dataItemTitle {
+		font-size: 16px;
+	}
+
+    .activeOrderWrapper,
+    .completedOrdersWrapper {
         padding: 0;
     }
 }
+

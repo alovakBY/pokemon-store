@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { VisibilityOff, Visibility } from "@mui/icons-material";
 
-import { ButtonSubmit } from "../../../../commonComponents/ButtonSubmit";
+import { Button } from "../../../../commonComponents/Button";
 
 import classes from "./SignIn.module.css";
 import { useState } from "react";
@@ -82,13 +82,14 @@ export const SignIn = ({ formik }) => {
                     <div className={classes.error}>{errors.password}</div>
                 )}
             </div>
-            <ButtonSubmit
-                className={classes.button}
-                disabled={!isValid || !dirty}
-                callback={handleSubmit}
-                text={"Sign in"}
-                type={"submit"}
-            />
+            <div className={classes.buttonWrapper}>
+                <Button
+                    disabled={!isValid || !dirty}
+                    callback={handleSubmit}
+                    text={"Sign in"}
+                    type={"submit"}
+                />
+            </div>
         </form>
     );
 };
